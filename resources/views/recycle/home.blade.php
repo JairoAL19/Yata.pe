@@ -8,7 +8,7 @@
 
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
     <div class="main-panel" >
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" style="background: #FFA41A; color: white">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">
@@ -17,10 +17,10 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="Tec">Reciclar</a>
+                    <a class="navbar-brand" href="Tec" style="color: white">¿Qué voy a reciclar?</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
 
                         Hola, {{ Auth::User()->name }}
                     </ul>
@@ -30,7 +30,8 @@
         </nav>
 
 
-        <div class="content" id="bg">
+        <div class="content" id="bg" >
+            <!--
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">
@@ -110,6 +111,107 @@
                     </div>
                 </div>
             </div>
+            -->
+            <style>
+                #repro{
+                    border-radius: 10px 10px 10px 10px;
+                    -moz-border-radius: 10px 10px 10px 10px;
+                    -webkit-border-radius: 10px 10px 10px 10px;
+                    border: 8px outset #d4d4d4;       
+                    width: 350px;
+                    background: white;    
+                    padding: 1%;      
+                    margin-left: 2%;
+                }
+                #celular{
+                    border-radius: 10px 10px 10px 10px;
+                    -moz-border-radius: 10px 10px 10px 10px;
+                    -webkit-border-radius: 10px 10px 10px 10px;
+                    border: 8px inset #d4d4d4; 
+                    width: 350px;
+                    background: white;       
+                    margin-left: 4%;   
+                }
+                #tablet{
+                    border-radius: 10px 10px 10px 10px;
+                    -moz-border-radius: 10px 10px 10px 10px;
+                    -webkit-border-radius: 10px 10px 10px 10px;
+                    border: 8px solid #d4d4d4;
+                    width: 350px;
+                    background: white; 
+                    margin-left: 2%;    
+                }
+                .boton a {
+                    display:block; width:100%; height:100%;                    
+                }
+                .boton a:hover {
+                }
+            </style>
+            <div class="CATEGORIAS" style="margin-top: 2%">
+                <div id="celular" class="boton" style="display: inline-block; height: 167px">                
+                    <div style="margin-top: 8.5%">   
+                    <a href="#">             
+                    <img href="hola" style="width: 40%;" src="../../img/celulares.png">
+                    <label style="font-size: 20px">CELULARES</label>
+                    </a>
+                    </div>
+                </div>
+                <div id="tablet" style="display: inline-block; height: 167px">
+                    <div style="margin-top: 5.5%">
+                    <a href="#">
+                    <img href="hola" style="width: 40%; " src="../../img/tablet.jpg">
+                    <label style="font-size: 20px">IPAD & TABLET</label>
+                    </a>
+                    </div>
+                </div>
+                <div id="repro" style="display: inline-block; height: 167px"> 
+                    <div style="">
+                    <a href="#">
+                    <img href="hola" style="width: 40%; " src="../../img/ipod.jpg">
+                    <label style="font-size: 20px">REPRODUCTORES</label>
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <div class="ABOUTAS" style="margin-top: 8%">
+                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 2%;"" >                
+                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
+                    <img style="display: inline-block;" src="../../img/icon.png">
+                    <p style="display: inline-block;">Sobre nosotros</p>
+                    </div>
+                    <div style="margin-top: 5%">   
+                        iReTron is the easiest, fastest and greenest reCommerce service to help you trade in your used electronics. Whether you want to trade in your iPhone, iPad, Kindle or other electronics, iReTron's got you covered.
+                    </div>
+                </div>
+                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 3%;">                
+                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
+                    <img style="display: inline-block;" src="../../img/reciclar.png">
+                    <p style="display: inline-block;">¿Qué puedo reciclar?</p>
+                    </div>
+                    <div style="margin-top: 5%">   
+                        iReTron is the easiest, fastest and greenest reCommerce service to help you trade in your used electronics. Whether you want to trade in your iPhone, iPad, Kindle or other electronics, iReTron's got you covered.
+                    </div>
+                </div>
+                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%;">                
+                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
+                    <img style="display: inline-block;" src="../../img/sun.png">
+                    <p style="display: inline-block;">¿Cómo funciona?</p>
+                    </div>
+                    <div style="margin-top: 5%">   
+                        iReTron is the easiest, fastest and greenest reCommerce service to help you trade in your used electronics. Whether you want to trade in your iPhone, iPad, Kindle or other electronics, iReTron's got you covered.
+                    </div>
+                </div>
+                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%;">                
+                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
+                    <img style="display: inline-block;" src="../../img/motorcycle.png">
+                    <p style="display: inline-block;">Rapido y Seguro</p>
+                    </div>
+                    <div style="margin-top: 5%">   
+                        iReTron is the easiest, fastest and greenest reCommerce service to help you trade in your used electronics. Whether you want to trade in your iPhone, iPad, Kindle or other electronics, iReTron's got you covered.
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 

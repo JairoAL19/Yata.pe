@@ -6,15 +6,15 @@
     -->
 
         <div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    <b>Yata</b>.pe
+            <div class="logo" style="width: 100%; margin-left: 0;  background: #FFA41A;  color: white;  border-right: 2px solid;">
+                <a href="http://www.creative-tim.com" class="simple-text" style="color: white">
+                    <b style="color: white">Yata</b>.pe
                 </a>
             </div>
 
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="Tec">
                         <i class="ti-panel"></i>
                         <p>Reciclar</p>
                     </a>
