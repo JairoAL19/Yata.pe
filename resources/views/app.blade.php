@@ -5,7 +5,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 
-@include('partials.htmlheader')
+@include('partials.htmlheader_iphone')
 
 <body>
 <div class="wrapper">

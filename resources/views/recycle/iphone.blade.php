@@ -113,102 +113,48 @@
             </div>
             -->
             <style>
-                #repro{
-                    border-radius: 10px 10px 10px 10px;
-                    -moz-border-radius: 10px 10px 10px 10px;
-                    -webkit-border-radius: 10px 10px 10px 10px;
-                    border: 8px outset #d4d4d4;       
-                    width: 320px;
-                    background: white;  
-                    margin-left: 2%;    
+                @media screen and (max-width: 1680px) {
+                    #cel{
+                        border-radius: 10px 10px 10px 10px;
+                        -moz-border-radius: 10px 10px 10px 10px;
+                        -webkit-border-radius: 10px 10px 10px 10px;
+                        border: 8px outset #d4d4d4;       
+                        width: 17%;
+                        background: white;    
+                        padding: 1%;      
+                        margin-left: 2%;
+                        margin-bottom: 2%;
+                        height: 250px;
+                    }
                 }
-                #celular{
-                    border-radius: 10px 10px 10px 10px;
-                    -moz-border-radius: 10px 10px 10px 10px;
-                    -webkit-border-radius: 10px 10px 10px 10px;
-                    border: 8px inset #d4d4d4; 
-                    width: 320px;
-                    background: white;       
-                    margin-left: 4%;   
+                @media screen and (max-width: 1280px) {
+                    #cel{
+                        border-radius: 10px 10px 10px 10px;
+                        -moz-border-radius: 10px 10px 10px 10px;
+                        -webkit-border-radius: 10px 10px 10px 10px;
+                        border: 8px outset #d4d4d4;       
+                        width: 160px;
+                        background: white;    
+                        padding: 1%;      
+                        margin-left: 2%;
+                        margin-bottom: 2%;
+                        height: 240px;
+                    }                    
                 }
-                #tablet{
-                    border-radius: 10px 10px 10px 10px;
-                    -moz-border-radius: 10px 10px 10px 10px;
-                    -webkit-border-radius: 10px 10px 10px 10px;
-                    border: 8px solid #d4d4d4;
-                    width: 320px;
-                    background: white; 
-                    margin-left: 2%;    
-                }
-                .boton a {
-                    display:block; width:100%; height:100%;                    
-                }
-                .boton a:hover {
-                }
+
             </style>
-            <div class="CATEGORIAS" style="margin-top: 2%">
-                <div id="celular" class="boton" style="display: inline-block; height: 167px">                
-                    <div style="margin-top: 8.5%">   
-                    <a href="Celulares">             
-                    <img href="hola" style="width: 40%;" src="../../img/celulares.png">
-                    <label style="font-size: 20px">CELULARES</label>
+            <div class="CATEGORIAS1" style="margin-top: 2%">
+                @foreach($celular as $cel)
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/Iphone/P">
+                    <img style="width: 100%; " src="../../{{ $cel->foto }}">
+                    <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$cel->nombre}}</label>
+                    <label style="font-size: 80%; margin-top: 2%; text-align: center; width: 100%; color: green">S/.{{$cel->precio_ini}}</label>
                     </a>
                     </div>
                 </div>
-                <div id="tablet" style="display: inline-block; height: 167px">
-                    <div style="margin-top: 5.5%">
-                    <a href="#">
-                    <img href="hola" style="width: 40%; " src="../../img/tablet.jpg">
-                    <label style="font-size: 20px">IPAD & TABLET</label>
-                    </a>
-                    </div>
-                </div>
-                <div id="repro" style="display: inline-block; height: 167px"> 
-                    <div style="margin-top: 2.5%">
-                    <a href="#">
-                    <img href="hola" style="width: 40%; " src="../../img/ipod.jpg">
-                    <label style="font-size: 20px">REPRODUCTORES</label>
-                    </a>
-                    </div>
-                </div>
-            </div>
-            <div class="ABOUTAS" style="margin-top: 8%">
-                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 2%;"" >                
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                    <img style="display: inline-block;" src="../../img/icon.png">
-                    <p style="display: inline-block;">Sobre nosotros</p>
-                    </div>
-                    <div style="margin-top: 5%; text-align: justify;">   
-                        Yata.pe es el servicio de reCommerce más fácil, rápido y ecológico para ayudarle a reciclar sus productos electrónicos usados. Ya sea que quieras reciclar tu iPhone, iPad, Samsung u otros productos electrónicos, Yata.pe te ayuda.
-                    </div>
-                </div>
-                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 3%;">                
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                    <img style="display: inline-block;" src="../../img/reciclar.png">
-                    <p style="display: inline-block;">¿Qué puedo reciclar?</p>
-                    </div>
-                    <div style="margin-top: 5%; text-align: justify;">   
-                        Usted puede reciclar Celulares, Ipd, Tablets, reproductores, entre otros productos que ya no use, Yata.pe se encarga de repararlo y darlo a otro usuario a un precio muy accesible. Recicla tu articulo hoy.
-                    </div>
-                </div>
-                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%;">                
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                    <img style="display: inline-block;" src="../../img/sun.png">
-                    <p style="display: inline-block;">¿Cómo funciona?</p>
-                    </div>
-                    <div style="margin-top: 5%">   
-                        Llegamos a su ubicación, Su teléfono móvil u otro aparato electrónico usado ​​se inspeccionan para asegurarse de que su estado coincide con su evaluación. El pago se reliza al momento de dar la conformidad por nuestro courier.
-                    </div>
-                </div>
-                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%;">                
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                    <img style="display: inline-block;" src="../../img/motorcycle.png">
-                    <p style="display: inline-block;">Rapido y Seguro</p>
-                    </div>
-                    <div style="margin-top: 5%">   
-                        Eliminamos todos los datos de cada artículo que recibimos para garantizar su completa privacidad y tranquilidad. Hacemos la experiencia segura informando cada paso que realizamos en nuestra AppWeb, trabajamos para usted.
-                    </div>
-                </div>
+                @endforeach
             </div>
 
         </div>
@@ -245,26 +191,26 @@
     </div>
 @endsection
     <!--   Core JS Files   -->
-    <script src="../assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="../assets/js/bootstrap-checkbox-radio.js"></script>
+	<script src="../../assets/js/bootstrap-checkbox-radio.js"></script>
 
 	<!--  Charts Plugin -->
-	<script src="../assets/js/chartist.min.js"></script>
+	<script src="../../assets/js/chartist.min.js"></script>
 
     <!--  Notifications Plugin    -->
-    <script src="../assets/js/bootstrap-notify.js"></script>
+    <script src="../../assets/js/bootstrap-notify.js"></script>
 
     <!--  Google Maps Plugin    -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
     <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-	<script src="../assets/js/paper-dashboard.js"></script>
+	<script src="../../assets/js/paper-dashboard.js"></script>
 
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-	<script src="../assets/js/demo.js"></script>
+	<script src="../../assets/js/demo.js"></script>
 
 	<script type="text/javascript">
     	$(document).ready(function(){

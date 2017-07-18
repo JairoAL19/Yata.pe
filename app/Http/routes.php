@@ -20,6 +20,13 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	Route::get('/Tec', function () {
     	return view('recycle.home');
 	});
+	Route::get('/Perfil', function () {
+    	return view('recycle.perfil');
+	});
+	Route::get('/Celulares', function () {
+    	return view('recycle.celulares');
+	});
+	Route::get('/Iphone/P', 'Reciclar\Celular@Iphone_P');
 
 });
 

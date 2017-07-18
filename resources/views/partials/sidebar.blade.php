@@ -14,13 +14,13 @@
 
             <ul class="nav">
                 <li class="active">
-                    <a href="Tec">
+                    <a href="/Reciclar/Tec">
                         <i class="ti-panel"></i>
                         <p>Reciclar</p>
                     </a>
                 </li>
                 <li >
-                    <a href="user.html">
+                    <a href="Perfil">
                         <i class="ti-user"></i>
                         <p>Mi Perfil</p>
                     </a>
