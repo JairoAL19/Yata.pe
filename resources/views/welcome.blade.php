@@ -34,7 +34,7 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+						<span class="copyright">&copy; 2017. Design: <a href="http://yata.pe">YataCP</a>.</span>
 					</footer>
 
 			</div>

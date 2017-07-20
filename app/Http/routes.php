@@ -26,7 +26,25 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	Route::get('/Celulares', function () {
     	return view('recycle.celulares');
 	});
-	Route::get('/Iphone/P', 'Reciclar\Celular@Iphone_P');
+	//Lista Marcas
+	Route::get('/Iphone/P', 'Reciclar\Celular@Iphone_P');	
+	Route::get('/Samsung/P', 'Reciclar\Celular@Samsung_P');
+	Route::get('/HTC/P', 'Reciclar\Celular@HTC_P');
+	Route::get('/Huawei/P', 'Reciclar\Celular@Huawei_P');
+	Route::get('/Motorola/P', 'Reciclar\Celular@Motorola_P');
+	Route::get('/LG/P', 'Reciclar\Celular@LG_P');
+	Route::get('/ZTE/P', 'Reciclar\Celular@ZTE_P');
+	Route::get('/Azumi/P', 'Reciclar\Celular@Azumi_P');
+	Route::get('/Nokia/P', 'Reciclar\Celular@Nokia_P');
+	Route::get('/BlackBerry/P', 'Reciclar\Celular@Blackberry_P');
+	//Lista Marcas End
 
+	//Formulario de reclamos
+	Route::get('/P/{cod_produc}', 'Reciclar\Celular@Iphone_P_Form');
+	//Formulario de reclamos End
+
+	//Guardado de solicitud reclamos
+	Route::post('/Solici', 'Reciclar\Celular@solicitud');
+	//Guardado de solicitud reclamos End
 });
 

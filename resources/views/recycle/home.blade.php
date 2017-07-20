@@ -113,76 +113,54 @@
             </div>
             -->
             <style>
-                #repro{
-                    border-radius: 10px 10px 10px 10px;
-                    -moz-border-radius: 10px 10px 10px 10px;
-                    -webkit-border-radius: 10px 10px 10px 10px;
-                    border: 8px outset #d4d4d4;       
-                    width: 320px;
-                    background: white;  
-                    margin-left: 2%;    
-                }
                 #celular{
                     border-radius: 10px 10px 10px 10px;
                     -moz-border-radius: 10px 10px 10px 10px;
                     -webkit-border-radius: 10px 10px 10px 10px;
                     border: 8px inset #d4d4d4; 
-                    width: 320px;
+                    width: 30%;
                     background: white;       
-                    margin-left: 4%;   
-                }
-                #tablet{
-                    border-radius: 10px 10px 10px 10px;
-                    -moz-border-radius: 10px 10px 10px 10px;
-                    -webkit-border-radius: 10px 10px 10px 10px;
-                    border: 8px solid #d4d4d4;
-                    width: 320px;
-                    background: white; 
-                    margin-left: 2%;    
-                }
-                .boton a {
-                    display:block; width:100%; height:100%;                    
-                }
-                .boton a:hover {
+                    margin-left: 2%;   
+                    height: 167px;
                 }
             </style>
             <div class="CATEGORIAS" style="margin-top: 2%">
-                <div id="celular" class="boton" style="display: inline-block; height: 167px">                
-                    <div style="margin-top: 8.5%">   
+                <div id="celular" class="boton" style="display: inline-block">                
+                    <div style="margin-top: 3%">   
                     <a href="Celulares">             
-                    <img href="hola" style="width: 40%;" src="../../img/celulares.png">
-                    <label style="font-size: 20px">CELULARES</label>
+                    <img href="hola" style="width: 40%; height: 85%" src="../../img/celulares.png">
+                    <label style="font-size: 120%">CELULARES</label>
                     </a>
                     </div>
                 </div>
-                <div id="tablet" style="display: inline-block; height: 167px">
-                    <div style="margin-top: 5.5%">
-                    <a href="#">
-                    <img href="hola" style="width: 40%; " src="../../img/tablet.jpg">
-                    <label style="font-size: 20px">IPAD & TABLET</label>
+                <div id="celular" class="boton" style="display: inline-block">                
+                    <div style="margin-top: 3%">   
+                    <a href="Celulares">             
+                    <img href="hola" style="width: 40%; height: 85%" src="../../img/tablet.jpg">
+                    <label style="font-size: 120%">IPAD y TABLET</label>
                     </a>
                     </div>
                 </div>
-                <div id="repro" style="display: inline-block; height: 167px"> 
-                    <div style="margin-top: 2.5%">
-                    <a href="#">
-                    <img href="hola" style="width: 40%; " src="../../img/ipod.jpg">
-                    <label style="font-size: 20px">REPRODUCTORES</label>
+                <div id="celular" class="boton" style="display: inline-block">                
+                    <div style="margin-top: 3%">   
+                    <a href="Celulares">             
+                    <img href="hola" style="width: 40%; height: 85%" src="../../img/ipod.jpg">
+                    <label style="font-size: 120%">REPRODUCTORES</label>
                     </a>
                     </div>
                 </div>
             </div>
             <div class="ABOUTAS" style="margin-top: 8%">
-                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 2%;"" >                
+                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 2%; float: left;" >                
                     <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                    <img style="display: inline-block;" src="../../img/icon.png">
-                    <p style="display: inline-block;">Sobre nosotros</p>
+                        <img style="display: inline-block;" src="../../img/icon.png">
+                        <p style="display: inline-block;">Sobre nosotros</p>
                     </div>
                     <div style="margin-top: 5%; text-align: justify;">   
                         Yata.pe es el servicio de reCommerce más fácil, rápido y ecológico para ayudarle a reciclar sus productos electrónicos usados. Ya sea que quieras reciclar tu iPhone, iPad, Samsung u otros productos electrónicos, Yata.pe te ayuda.
                     </div>
                 </div>
-                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 3%;">                
+                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 3%; float: left;">                
                     <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
                     <img style="display: inline-block;" src="../../img/reciclar.png">
                     <p style="display: inline-block;">¿Qué puedo reciclar?</p>
@@ -191,7 +169,7 @@
                         Usted puede reciclar Celulares, Ipd, Tablets, reproductores, entre otros productos que ya no use, Yata.pe se encarga de repararlo y darlo a otro usuario a un precio muy accesible. Recicla tu articulo hoy.
                     </div>
                 </div>
-                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%;">                
+                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%; float: left;">                
                     <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
                     <img style="display: inline-block;" src="../../img/sun.png">
                     <p style="display: inline-block;">¿Cómo funciona?</p>
@@ -200,7 +178,7 @@
                         Llegamos a su ubicación, Su teléfono móvil u otro aparato electrónico usado ​​se inspeccionan para asegurarse de que su estado coincide con su evaluación. El pago se reliza al momento de dar la conformidad por nuestro courier.
                     </div>
                 </div>
-                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%;">                
+                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%; float: left;">                
                     <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
                     <img style="display: inline-block;" src="../../img/motorcycle.png">
                     <p style="display: inline-block;">Rapido y Seguro</p>

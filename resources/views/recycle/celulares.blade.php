@@ -113,20 +113,35 @@
             </div>
             -->
             <style>
-                #cel{
-                    border-radius: 10px 10px 10px 10px;
-                    -moz-border-radius: 10px 10px 10px 10px;
-                    -webkit-border-radius: 10px 10px 10px 10px;
-                    border: 8px outset #d4d4d4;       
-                    width: 180px;
-                    background: white;    
-                    padding: 1%;      
-                    margin-left: 2%;
-                    margin-bottom: 2%;
+                @media screen and (max-width: 1680px) {
+                    #cel{
+                        border-radius: 10px 10px 10px 10px;
+                        -moz-border-radius: 10px 10px 10px 10px;
+                        -webkit-border-radius: 10px 10px 10px 10px;
+                        border: 8px outset #d4d4d4;       
+                        width: 17%;
+                        background: white;    
+                        padding: 1%;      
+                        margin-left: 2%;
+                        margin-bottom: 2%;
+                    }
+                }
+                @media screen and (max-width: 1280px) {
+                    #cel{
+                        border-radius: 10px 10px 10px 10px;
+                        -moz-border-radius: 10px 10px 10px 10px;
+                        -webkit-border-radius: 10px 10px 10px 10px;
+                        border: 8px outset #d4d4d4;       
+                        width: 147px;
+                        background: white;    
+                        padding: 1%;      
+                        margin-left: 2%;
+                        margin-bottom: 2%;
+                    }                    
                 }
             </style>
             <div class="CATEGORIAS1" style="margin-top: 2%">
-                <div id="cel" style="display: inline-block; height: 250px"> 
+                <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
                     <a href="/Reciclar/Iphone/P">
                     <img style="width: 100%; " src="../../img/celulares/iphone.jpg">
@@ -134,73 +149,73 @@
                     </a>
                     </div>
                 </div>
-                <div id="cel" style="display: inline-block; height: 250px"> 
+                <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="#">
+                    <a href="/Reciclar/Samsung/P">
                     <img style="width: 100%; " src="../../img/celulares/samsung.jpg">
                     <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">Samsung</label>
                     </a>
                     </div>
                 </div>
-                <div id="cel" style="display: inline-block; height: 250px"> 
+                <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="#">
+                    <a href="/Reciclar/HTC/P">
                     <img style="width: 100%; " src="../../img/celulares/htc.jpg">
                     <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">HTC</label>
                     </a>
                     </div>
                 </div>
-                <div id="cel" style="display: inline-block; height: 250px"> 
+                <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="#">
+                    <a href="/Reciclar/Huawei/P">
                     <img style="width: 100%; " src="../../img/celulares/huawei.png">
                     <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">Huawei</label>
                     </a>
                     </div>
                 </div>
-                <div id="cel" style="display: inline-block; height: 250px"> 
+                <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="#">
+                    <a href="/Reciclar/Motorola/P">
                     <img style="width: 100%; " src="../../img/celulares/moto.jpg">
                     <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">Motorola</label>
                     </a>
                     </div>                    
                 </div>
-                <div id="cel" style="display: inline-block; height: 250px"> 
+                <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="#">
+                    <a href="/Reciclar/LG/P">
                     <img style="width: 100%; " src="../../img/celulares/lg.jpg">
                     <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">LG</label>
                     </a>
                     </div>
                 </div>
-                <div id="cel" style="display: inline-block; height: 250px"> 
+                <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="#">
+                    <a href="/Reciclar/ZTE/P">
                     <img style="width: 100%; " src="../../img/celulares/zte.jpg">
                     <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">ZTE</label>
                     </a>
                     </div>
                 </div>
-                <div id="cel" style="display: inline-block; height: 250px"> 
+                <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="#">
+                    <a href="/Reciclar/Azumi/P">
                     <img style="width: 100%; " src="../../img/celulares/azumi.jpg">
                     <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">Azumi</label>
                     </a>
                     </div>
                 </div>
-                <div id="cel" style="display: inline-block; height: 250px"> 
+                <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="#">
+                    <a href="/Reciclar/Nokia/P">
                     <img style="width: 100%; " src="../../img/celulares/nokia.jpg">
                     <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">Nokia</label>
                     </a>
                     </div>
                 </div>
-                <div id="cel" style="display: inline-block; height: 250px"> 
+                <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="#">
+                    <a href="/Reciclar/BlackBerry/P">
                     <img style="width: 100%; " src="../../img/celulares/bb.jpg">
                     <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">BlackBerry</label>
                     </a>

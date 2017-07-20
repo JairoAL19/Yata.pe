@@ -132,7 +132,7 @@
                         -moz-border-radius: 10px 10px 10px 10px;
                         -webkit-border-radius: 10px 10px 10px 10px;
                         border: 8px outset #d4d4d4;       
-                        width: 147px;
+                        width: 160px;
                         background: white;    
                         padding: 1%;      
                         margin-left: 2%;
@@ -145,7 +145,7 @@
                 @foreach($celular as $cel)
                 <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="/Reciclar/P/{{ $cel->cod_produc }}">
+                    <a href="/Reciclar/Samsung/P">
                     <img style="width: 100%; " src="../../{{ $cel->foto }}">
                     <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$cel->nombre}}</label>
                     <label style="font-size: 80%; margin-top: 2%; text-align: center; width: 100%; color: green">S/.{{$cel->precio_ini}}</label>

@@ -7,7 +7,7 @@
 
         <div class="sidebar-wrapper">
             <div class="logo" style="width: 100%; margin-left: 0;  background: #FFA41A;  color: white;  border-right: 2px solid;">
-                <a href="http://www.creative-tim.com" class="simple-text" style="color: white">
+                <a href="/Reciclar/Tec" class="simple-text" style="color: white">
                     <b style="color: white">Yata</b>.pe
                 </a>
             </div>
@@ -15,12 +15,12 @@
             <ul class="nav">
                 <li class="active">
                     <a href="/Reciclar/Tec">
-                        <i class="ti-panel"></i>
+                        <i class="ti-reload"></i>
                         <p>Reciclar</p>
                     </a>
                 </li>
                 <li >
-                    <a href="Perfil">
+                    <a href="/Reciclar/Perfil">
                         <i class="ti-user"></i>
                         <p>Mi Perfil</p>
                     </a>

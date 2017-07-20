@@ -17,7 +17,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="Tec" style="color: white">¿Qué voy a reciclar?</a>
+                    <a class="navbar-brand" href="Tec" style="color: white">Mi Perfil</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
