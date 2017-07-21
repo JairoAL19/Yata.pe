@@ -112,94 +112,113 @@
                 </div>
             </div>
             -->
-            <style>                
+            <style>
                 @media screen and (max-width: 1680px) {
-                    #celular{
+                    #cel{
                         border-radius: 10px 10px 10px 10px;
                         -moz-border-radius: 10px 10px 10px 10px;
                         -webkit-border-radius: 10px 10px 10px 10px;
-                        border: 8px inset #d4d4d4; 
-                        width: 30%;
-                        background: white;       
-                        margin-left: 2%;   
-                        height: 167px;
+                        border: 8px outset #d4d4d4;       
+                        width: 17%;
+                        background: white;    
+                        padding: 1%;      
+                        margin-left: 2%;
+                        margin-bottom: 2%;
                     }
                 }
                 @media screen and (max-width: 1280px) {
-                    #celular{
+                    #cel{
                         border-radius: 10px 10px 10px 10px;
                         -moz-border-radius: 10px 10px 10px 10px;
                         -webkit-border-radius: 10px 10px 10px 10px;
-                        border: 8px inset #d4d4d4; 
-                        width: 95%;
-                        background: white;       
-                        margin-left: 2%;   
-                        height: 150px;
-                        margin-bottom: 1%;
-                    }                 
+                        border: 8px outset #d4d4d4;       
+                        width: 47%;
+                        background: white;    
+                        padding: 1%;      
+                        margin-left: 2%;
+                        margin-bottom: 2%;
+                    }                    
                 }
             </style>
-            <div class="CATEGORIAS" style="margin-top: 2%">
-                <div id="celular" class="boton" style="display: inline-block">                
-                    <div style="margin-top: 3%">   
-                    <a href="Celulares">             
-                    <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/celulares.png">
-                    <label style="font-size: 120%">CELULARES</label>
+            <div class="CATEGORIAS1" style="margin-top: 2%">
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/Iphone/P">
+                    <img style="width: 100%; " src="../../img/celulares/iphone.jpg">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">IPhone</label>
                     </a>
                     </div>
                 </div>
-                <div id="celular" class="boton" style="display: inline-block">                
-                    <div style="margin-top: 3%">   
-                    <a href="Celulares">             
-                    <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/tablet.jpg">
-                    <label style="font-size: 120%">IPAD y TABLET</label>
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/Samsung/P">
+                    <img style="width: 100%; " src="../../img/celulares/samsung.jpg">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">Samsung</label>
                     </a>
                     </div>
                 </div>
-                <div id="celular" class="boton" style="display: inline-block">                
-                    <div style="margin-top: 3%">   
-                    <a href="Celulares">             
-                    <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/ipod.jpg">
-                    <label style="font-size: 120%">REPRODUCTORES</label>
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/HTC/P">
+                    <img style="width: 100%; " src="../../img/celulares/htc.jpg">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">HTC</label>
                     </a>
                     </div>
                 </div>
-            </div>
-            <div class="ABOUTAS" style="margin-top: 8%">
-                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 2%; float: left;" >                
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                        <img style="display: inline-block;" src="../../img/icon.png">
-                        <p style="display: inline-block;">Sobre nosotros</p>
-                    </div>
-                    <div style="margin-top: 5%; text-align: justify;">   
-                        Yata.pe es el servicio de reCommerce más fácil, rápido y ecológico para ayudarle a reciclar sus productos electrónicos usados. Ya sea que quieras reciclar tu iPhone, iPad, Samsung u otros productos electrónicos, Yata.pe te ayuda.
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/Huawei/P">
+                    <img style="width: 100%; " src="../../img/celulares/huawei.png">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">Huawei</label>
+                    </a>
                     </div>
                 </div>
-                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 3%; float: left;">                
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                    <img style="display: inline-block;" src="../../img/reciclar.png">
-                    <p style="display: inline-block;">¿Qué puedo reciclar?</p>
-                    </div>
-                    <div style="margin-top: 5%; text-align: justify;">   
-                        Usted puede reciclar Celulares, Ipd, Tablets, reproductores, entre otros productos que ya no use, Yata.pe se encarga de repararlo y darlo a otro usuario a un precio muy accesible. Recicla tu articulo hoy.
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/Motorola/P">
+                    <img style="width: 100%; " src="../../img/celulares/moto.jpg">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">Motorola</label>
+                    </a>
+                    </div>                    
+                </div>
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/LG/P">
+                    <img style="width: 100%; " src="../../img/celulares/lg.jpg">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">LG</label>
+                    </a>
                     </div>
                 </div>
-                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%; float: left;">                
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                    <img style="display: inline-block;" src="../../img/sun.png">
-                    <p style="display: inline-block;">¿Cómo funciona?</p>
-                    </div>
-                    <div style="margin-top: 5%">   
-                        Llegamos a su ubicación, Su teléfono móvil u otro aparato electrónico usado ​​se inspeccionan para asegurarse de que su estado coincide con su evaluación. El pago se reliza al momento de dar la conformidad por nuestro courier.
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/ZTE/P">
+                    <img style="width: 100%; " src="../../img/celulares/zte.jpg">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">ZTE</label>
+                    </a>
                     </div>
                 </div>
-                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%; float: left;">                
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                    <img style="display: inline-block;" src="../../img/motorcycle.png">
-                    <p style="display: inline-block;">Rapido y Seguro</p>
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/Azumi/P">
+                    <img style="width: 100%; " src="../../img/celulares/azumi.jpg">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">Azumi</label>
+                    </a>
                     </div>
-                    <div style="margin-top: 5%">   
-                        Eliminamos todos los datos de cada artículo que recibimos para garantizar su completa privacidad y tranquilidad. Hacemos la experiencia segura informando cada paso que realizamos en nuestra AppWeb, trabajamos para usted.
+                </div>
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/Nokia/P">
+                    <img style="width: 100%; " src="../../img/celulares/nokia.jpg">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">Nokia</label>
+                    </a>
+                    </div>
+                </div>
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/BlackBerry/P">
+                    <img style="width: 100%; " src="../../img/celulares/bb.jpg">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">BlackBerry</label>
+                    </a>
                     </div>
                 </div>
             </div>

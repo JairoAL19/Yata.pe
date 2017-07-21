@@ -13,13 +13,13 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li >
                     <a href="/Reciclar/Tec">
                         <i class="ti-reload"></i>
                         <p>Reciclar</p>
                     </a>
                 </li>
-                <li >
+                <li class="active">
                     <a href="/Reciclar/Perfil">
                         <i class="ti-user"></i>
                         <p>Mi Perfil</p>

@@ -16,15 +16,13 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
-
+	
 	Route::get('/Tec', function () {
     	return view('recycle.home');
 	});
-	Route::get('/Perfil', function () {
-    	return view('recycle.perfil');
-	});
+	Route::get('/Perfil', ['uses' => 'Auth\Perfil@index', 'as' => '/Perfil']);
 	Route::get('/Celulares', function () {
-    	return view('recycle.celulares');
+    	return view('recycle.celulares.celulares');
 	});
 	//Lista Marcas
 	Route::get('/Iphone/P', 'Reciclar\Celular@Iphone_P');	
@@ -40,11 +38,15 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	//Lista Marcas End
 
 	//Formulario de reclamos
-	Route::get('/P/{cod_produc}', 'Reciclar\Celular@Iphone_P_Form');
+	Route::get('/P/{cod_produc}', 'Reciclar\Celular@P_Form');
 	//Formulario de reclamos End
 
 	//Guardado de solicitud reclamos
 	Route::post('/Solici', 'Reciclar\Celular@solicitud');
 	//Guardado de solicitud reclamos End
+
+	//Actualizar Perfil
+	Route::post('/Actualizar_P', 'Auth\Perfil@actualizar_p');
+	//Actualizar Perfil End
 });
 

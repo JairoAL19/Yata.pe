@@ -8,7 +8,7 @@
 
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
     <div class="main-panel" >
-        <nav class="navbar navbar-default" style="background: #FFA41A; color: white">
+        <nav class="navbar navbar-default" style="background: #348CB2; color: white">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">
@@ -17,7 +17,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="Tec" style="color: white">¿Qué voy a reciclar?</a>
+                    <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">¿Qué voy a reciclar?</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
