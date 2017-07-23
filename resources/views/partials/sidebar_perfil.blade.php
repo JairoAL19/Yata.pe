@@ -46,7 +46,7 @@
                 <li>
                 <li class="active-pro">
                     <a href="/auth/logout">
-                        <i class="ti-export"></i>
+                        <i class="ti-power-off"></i>
                         <p>CERRAR SESIÓN</p>
                     </a>
                 </li>

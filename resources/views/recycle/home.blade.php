@@ -5,7 +5,7 @@
 @endsection
 
 @section('main-content')
-
+<link href="/css/progressbar.css" rel="stylesheet"/>
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
     <div class="main-panel" >
         <nav class="navbar navbar-default" style="background: #348CB2; color: white">
@@ -29,89 +29,15 @@
             </div>
         </nav>
 
+        <ul id="progressbar" style="text-align: center; margin-top: 2%">
+            <li class="active" style="color: black; ">Selecciona</li>
+            <li style="color: black; ">Marca</li>
+            <li style="color: black; ">Modelo</li>
+            <li style="color: black; ">Estado</li>
+        </ul>
 
         <div class="content" id="bg" >
-            <!--
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-success text-center">
-                                            <i class="ti-wallet"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Celulares</p>
-                                            $1,345
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                        <i class="ti-calendar"></i> Last day
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-danger text-center">
-                                            <i class="ti-pulse"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Ipad y Tablet</p>
-                                            23
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                        <i class="ti-timer"></i> In the last hour
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-info text-center">
-                                            <i class="ti-twitter-alt"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Reproductores</p>
-                                            +45
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                        <i class="ti-reload"></i> Updated now
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            -->
+
             <style>                
                 @media screen and (max-width: 1680px) {
                     #celular{
@@ -124,6 +50,19 @@
                         margin-left: 2%;   
                         height: 167px;
                     }
+                    #info{
+                        width: 20%;
+                    } 
+                    #infotext{
+                        margin-top: 5%;
+
+                    } 
+                    #celub2{
+                        margin-top: 3%;
+                    }    
+                    .ABOUTAS{
+                        margin-top: 8%
+                    }  
                 }
                 @media screen and (max-width: 1280px) {
                     #celular{
@@ -134,14 +73,54 @@
                         width: 95%;
                         background: white;       
                         margin-left: 2%;   
-                        height: 150px;
+                        height: 167px;
                         margin-bottom: 1%;
                     }                 
+                    #info{
+                        width: 95%;
+                    }
+                    #infotext{
+                        margin-top: 2%;
+                        width: 100%;
+                    }     
+                    #celub2{
+                        margin-top: 1%;
+                    }    
+                    .ABOUTAS{
+                        margin-top: 2%
+                    }  
+
+                }
+                @media screen and (max-width: 768px) {
+                    #celular{
+                        border-radius: 10px 10px 10px 10px;
+                        -moz-border-radius: 10px 10px 10px 10px;
+                        -webkit-border-radius: 10px 10px 10px 10px;
+                        border: 8px inset #d4d4d4; 
+                        width: 95%;
+                        background: white;       
+                        margin-left: 2%;   
+                        height: 150px;
+                        margin-bottom: 1%;
+                    }  
+                    #info{
+                        width: 93%;
+                    }
+                    #infotext{
+                        margin-top: 2%;
+                        width: 100%;
+                    }   
+                    #celub2{
+                        margin-top: 3%;
+                    }
+                    .ABOUTAS{
+                        margin-top: 2%
+                    }    
                 }
             </style>
             <div class="CATEGORIAS" style="margin-top: 2%">
                 <div id="celular" class="boton" style="display: inline-block">                
-                    <div style="margin-top: 3%">   
+                    <div id="celub2" style="">   
                     <a href="Celulares">             
                     <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/celulares.png">
                     <label style="font-size: 120%">CELULARES</label>
@@ -149,7 +128,7 @@
                     </div>
                 </div>
                 <div id="celular" class="boton" style="display: inline-block">                
-                    <div style="margin-top: 3%">   
+                    <div id="celub2" style="">   
                     <a href="Celulares">             
                     <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/tablet.jpg">
                     <label style="font-size: 120%">IPAD y TABLET</label>
@@ -157,7 +136,7 @@
                     </div>
                 </div>
                 <div id="celular" class="boton" style="display: inline-block">                
-                    <div style="margin-top: 3%">   
+                    <div id="celub2" style="">   
                     <a href="Celulares">             
                     <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/ipod.jpg">
                     <label style="font-size: 120%">REPRODUCTORES</label>
@@ -165,40 +144,40 @@
                     </div>
                 </div>
             </div>
-            <div class="ABOUTAS" style="margin-top: 8%">
-                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 2%; float: left;" >                
+            <div class="ABOUTAS">
+                <div id="info" class="boton" style="display: inline-block; margin-left: 2%; float: left;" >           
                     <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
                         <img style="display: inline-block;" src="../../img/icon.png">
                         <p style="display: inline-block;">Sobre nosotros</p>
                     </div>
-                    <div style="margin-top: 5%; text-align: justify;">   
+                    <div id="infotext" style=" text-align: justify;">   
                         Yata.pe es el servicio de reCommerce más fácil, rápido y ecológico para ayudarle a reciclar sus productos electrónicos usados. Ya sea que quieras reciclar tu iPhone, iPad, Samsung u otros productos electrónicos, Yata.pe te ayuda.
                     </div>
                 </div>
-                <div id="" class="boton" style="width: 20%; display: inline-block; margin-left: 3%; float: left;">                
+                <div id="info" class="boton" style="display: inline-block; margin-left: 3%; float: left;">            
                     <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
                     <img style="display: inline-block;" src="../../img/reciclar.png">
-                    <p style="display: inline-block;">¿Qué puedo reciclar?</p>
+                    <p style="display: inline-block; font-size: 90%">¿Qué puedo reciclar?</p>
                     </div>
-                    <div style="margin-top: 5%; text-align: justify;">   
+                    <div id="infotext" style="text-align: justify;">   
                         Usted puede reciclar Celulares, Ipd, Tablets, reproductores, entre otros productos que ya no use, Yata.pe se encarga de repararlo y darlo a otro usuario a un precio muy accesible. Recicla tu articulo hoy.
                     </div>
                 </div>
-                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%; float: left;">                
+                <div id="info" class="boton" style=" border: 0px solid black; display: inline-block; margin-left: 3%; float: left;">                
                     <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
                     <img style="display: inline-block;" src="../../img/sun.png">
                     <p style="display: inline-block;">¿Cómo funciona?</p>
                     </div>
-                    <div style="margin-top: 5%">   
+                    <div id="infotext" style="text-align: justify;">   
                         Llegamos a su ubicación, Su teléfono móvil u otro aparato electrónico usado ​​se inspeccionan para asegurarse de que su estado coincide con su evaluación. El pago se reliza al momento de dar la conformidad por nuestro courier.
                     </div>
                 </div>
-                <div id="" class="boton" style=" border: 0px solid black; width: 20%; display: inline-block; margin-left: 3%; float: left;">                
+                <div id="info" class="boton" style=" border: 0px solid black;display: inline-block; margin-left: 3%; float: left;">                
                     <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
                     <img style="display: inline-block;" src="../../img/motorcycle.png">
                     <p style="display: inline-block;">Rapido y Seguro</p>
                     </div>
-                    <div style="margin-top: 5%">   
+                    <div id="infotext" style="text-align: justify;">   
                         Eliminamos todos los datos de cada artículo que recibimos para garantizar su completa privacidad y tranquilidad. Hacemos la experiencia segura informando cada paso que realizamos en nuestra AppWeb, trabajamos para usted.
                     </div>
                 </div>

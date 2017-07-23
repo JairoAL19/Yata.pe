@@ -48,5 +48,9 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	//Actualizar Perfil
 	Route::post('/Actualizar_P', 'Auth\Perfil@actualizar_p');
 	//Actualizar Perfil End
+
+	//Despues de enviar solicitud
+	Route::get('/Aceptado/{data}', ['uses' => 'Reciclar\Celular@index_aceptado', 'as' => '/Aceptado']);
+	//Despues de enviar solicitud End
 });
 

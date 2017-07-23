@@ -5,7 +5,7 @@
 @endsection
 
 @section('main-content')
-
+<link href="/css/progressbar.css" rel="stylesheet"/>
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
     <div class="main-panel" >
         <nav class="navbar navbar-default" style="background: #348CB2; color: white">
@@ -17,7 +17,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">¿Qué voy a reciclar?</a>
+                    <a class="navbar-brand" href="Tec" style="color: white">¿Qué voy a reciclar?</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
@@ -28,59 +28,41 @@
                 </div>
             </div>
         </nav>
-        <link href="/css/progressbar.css" rel="stylesheet"/>
-        <ul id="progressbar" style="text-align: center; margin-top: 2%">
-            <li class="active" style="color: black; ">Selecciona</li>
-            <li class="active" style="color: black; ">Marca</li>
-            <li class="active" style="color: black; ">Modelo</li>
-            <li style="color: black; ">Estado</li>
-        </ul>
-
-        <div class="content" id="bg" >
-
-            <style>
+        <style>                
                 @media screen and (max-width: 1680px) {
-                    #cel{
-                        border-radius: 10px 10px 10px 10px;
-                        -moz-border-radius: 10px 10px 10px 10px;
-                        -webkit-border-radius: 10px 10px 10px 10px;
-                        border: 8px outset #d4d4d4;       
-                        width: 17%;
-                        background: white;    
-                        padding: 1%;      
-                        margin-left: 2%;
-                        margin-bottom: 2%;
+                    p{
+                        display: inline-block;
                     }
                 }
                 @media screen and (max-width: 1280px) {
-                    #cel{
-                        border-radius: 10px 10px 10px 10px;
-                        -moz-border-radius: 10px 10px 10px 10px;
-                        -webkit-border-radius: 10px 10px 10px 10px;
-                        border: 8px outset #d4d4d4;       
-                        width: 46%;
-                        background: white;    
-                        padding: 1%;      
-                        margin-left: 2%;
-                        margin-bottom: 2%;
-                    }                    
+                    #text{
+                        font-size: 100%;
+                    }
+
                 }
-
+                @media screen and (max-width: 768px) {
+                    #text{
+                        font-size: 90%;
+                        width: 90%;
+                    }
+                    p{
+                        
+                    }
+                }
             </style>
-            <div class="CATEGORIAS1" style="margin-top: 2%">
-                @foreach($celular as $cel)
-                <div id="cel" style="display: inline-block; "> 
-                    <div style="margin-top: 0%">
-                    <a href="/Reciclar/Samsung/P">
-                    <img style="width: 100%; " src="../../{{ $cel->foto }}">
-                    <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$cel->nombre}}</label>
-                    <label style="font-size: 80%; margin-top: 2%; text-align: center; width: 100%; color: green">S/.{{$cel->precio_ini}}</label>
-                    </a>
-                    </div>
+        <link href="/css/freelancer.css" rel="stylesheet">
+        <div class="content" id="bg" >
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Felicidades</h2>
+                    <hr class="star-primary">                    
+                    <p id="text" style="display: inline-block;">Tu solicitud fue registrada satisfactoriamente. Puedes ver tus solicitud en la opción "Solicitudes". Un courier se acercará el día {{ $data->fecha_r }} a recoger el {{ $data->cod_produc }}, comproborá que la condición del producto sea {{ $data->estado }}. El pago de S/.{{ $data->precio_fin}} se realizará despues de la verificación, Gracias por usar Yata.pe y ayudar a un mundo mejor.</p></br>
+                    <p>Cliente: <b style="color: green">{{ $usuario }} </b></p>
+                    <p>Fecha: <b style="color: green">{{ $data->created_at }} </b></p>
+                    <p>Servicio: <b style="color: green">Web Recycle</b></p></br>
+                    <img style="width: 30%; " src="/img/courier.jpg">
                 </div>
-                @endforeach
             </div>
-
         </div>
 
 
@@ -115,26 +97,26 @@
     </div>
 @endsection
     <!--   Core JS Files   -->
-    <script src="../../assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="../../assets/js/bootstrap-checkbox-radio.js"></script>
+	<script src="/assets/js/bootstrap-checkbox-radio.js"></script>
 
 	<!--  Charts Plugin -->
-	<script src="../../assets/js/chartist.min.js"></script>
+	<script src="/assets/js/chartist.min.js"></script>
 
     <!--  Notifications Plugin    -->
-    <script src="../../assets/js/bootstrap-notify.js"></script>
+    <script src="/assets/js/bootstrap-notify.js"></script>
 
     <!--  Google Maps Plugin    -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
     <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-	<script src="../../assets/js/paper-dashboard.js"></script>
+	<script src="/assets/js/paper-dashboard.js"></script>
 
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-	<script src="../../assets/js/demo.js"></script>
+	<script src="/assets/js/demo.js"></script>
 
 	<script type="text/javascript">
     	$(document).ready(function(){

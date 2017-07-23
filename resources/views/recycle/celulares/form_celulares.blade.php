@@ -17,7 +17,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">¿Qué voy a reciclar?</a>
+                    <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">Estado del Articulo</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
@@ -27,7 +27,13 @@
                 </div>
             </div>
         </nav>
-
+        <link href="/css/progressbar.css" rel="stylesheet"/>
+        <ul id="progressbar" style="text-align: center; margin-top: 2%">
+            <li class="active" style="color: black; ">Selecciona</li>
+            <li class="active" style="color: black; ">Marca</li>
+            <li class="active" style="color: black; ">Modelo</li>
+            <li class="active" style="color: black; ">Estado</li>
+        </ul>
 
         <div class="content">
             <div class="container-fluid">
@@ -37,7 +43,7 @@
                             <div id="cel" style="display: inline-block; "> 
                                 <div style="margin-top: 0%">
                                 <img style="width: 100%; margin-top: 5%" src="../../../{{ $celular[0]->foto }}">
-                                <b><input id="pago" style="font-size: 120%; margin-top: 2%; text-align: center; width: 100%; border: 0px; background: none; color: green" disabled value="Pago: S/. {{$buen}}"></b>
+                                <b><input id="pago" style="font-size: 130%; margin-top: 2%; margin-bottom: 2%; text-align: center; width: 100%; border: 0px; background: none; color: green" disabled value="Pago: S/. {{$buen}}"></b>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +126,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">                                                
                                                 <label>Fecha de recojo</label>
-                                                <input type="text" class="form-control border-input" name="fecha" placeholder="22/06/2017" >
+                                                <input type="text" class="form-control border-input" name="fecha_r" placeholder="22/06/2017" >
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -133,8 +139,10 @@
                                     <div class="text-center">
                                         <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                                         <input type="hidden" name="marca" value="{{ $celular[0]->marca }}" />
-                                        <input type="hidden" name="marca" value="{{ $celular[0]->modelo }}" />
-                                        <input type="hidden" id="monto" name="monto" value="{{ $buen }}" />
+                                        <input type="hidden" name="cod_produc" value="{{ $celular[0]->nombre }}" />
+                                        <input type="hidden" name="cod_user" value="{{ Auth::User()->id }}" />
+                                        <input type="hidden" id="monto" name="precio_fin" value="{{ $buen }}" />
+                                        <input type="hidden" name="metodo_p" value="efectivo" />
                                         <button type="submit" class="btn btn-info btn-fill btn-wd">Reciclar</button>
                                     </div>
                                     <div class="clearfix"></div>

@@ -7,6 +7,7 @@ Use App\Models\Celus;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Models\Solicitud_r;
 
 class Celular extends Controller
 {
@@ -18,6 +19,14 @@ class Celular extends Controller
     public function index()
     {
         
+    }
+    public function index_aceptado($data){
+        $solici_r = Solicitud_r::find($data);
+        $usuario = User::find($solici_r->cod_user);
+        return view('recycle.aceptado')->with([
+            'data' => $solici_r,
+            'usuario' =>$usuario->name,
+        ]);
     }
     //LISTA DE MARCAS
         public function Iphone_P(){
@@ -86,7 +95,15 @@ class Celular extends Controller
     //GUARDADO DE SOLICITUD RECICLADO
         public function solicitud (Request $request){
             $data = $request;
-            dd($data);
+            $solici = new Solicitud_r();
+            $solici->cod_user = $data->cod_user;
+            $solici->cod_produc = $data->cod_produc;
+            $solici->fecha_r = $data->fecha_r;
+            $solici->precio_fin = $data->precio_fin;
+            $solici->metodo_p = $data->metodo_p;
+            $solici->estado = $data->estado;
+            $solici->save();
+            return redirect()->route('/Aceptado', ['data' =>  $solici->id, 'marca' => $data->marca.'%Modelo'.$data->cod_produc,   ]);      
         }
     //GUARDADO DE SOLICITUD RECICLADO END   
 
