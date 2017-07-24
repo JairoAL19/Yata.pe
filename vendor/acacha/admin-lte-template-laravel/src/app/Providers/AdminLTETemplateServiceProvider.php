@@ -36,7 +36,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
             [ 'getReset' => 'auth.reset',] );
 
         Route::get('/home', ['as' => 'home','middleware' => 'auth', function () {
-            return view('home');
+            return redirect('/');
         }]);
 
     }

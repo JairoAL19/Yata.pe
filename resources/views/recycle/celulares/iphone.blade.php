@@ -8,7 +8,7 @@
 
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
     <div class="main-panel" >
-        <nav class="navbar navbar-default" style="background: #348CB2; color: white">
+        <nav class="navbar navbar-default" style="background: #8DC538; color: white">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">
@@ -74,7 +74,6 @@
                     <a href="/Reciclar/P/{{ $cel->cod_produc }}">
                     <img style="width: 100%; " src="../../{{ $cel->foto }}">
                     <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$cel->nombre}}</label>
-                    <label style="font-size: 80%; margin-top: 2%; text-align: center; width: 100%; color: green">S/.{{$cel->precio_ini}}</label>
                     </a>
                     </div>
                 </div>
@@ -84,33 +83,7 @@
         </div>
 
 
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-
-                        <li>
-                            <a href="http://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                               Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
-                </div>
-            </div>
-        </footer>
+        @include('partials.footer')
 
     </div>
 @endsection
@@ -135,20 +108,3 @@
 
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 	<script src="../../assets/js/demo.js"></script>
-
-	<script type="text/javascript">
-    	$(document).ready(function(){
-
-        	demo.initChartist();
-
-        	$.notify({
-            	icon: 'ti-gift',
-            	message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
-
-            },{
-                type: 'success',
-                timer: 4000
-            });
-
-    	});
-	</script>

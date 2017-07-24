@@ -8,7 +8,7 @@
 
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
     <div class="main-panel" >
-        <nav class="navbar navbar-default" style="background: #348CB2; color: white">
+        <nav class="navbar navbar-default" style="background: #8DC538; color: white">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">
@@ -30,7 +30,7 @@
         </nav>
 
 
-        <div class="content">
+        <div class="content" style="margin-top: 1%">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 col-md-5">
@@ -64,71 +64,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">Team Members</h4>
-                            </div>
-                            <div class="content">
-                                <ul class="list-unstyled team-members">
-                                            <li>
-                                                <div class="row">
-                                                    <div class="col-xs-3">
-                                                        <div class="avatar">
-                                                            <img src="../assets/img/faces/face-0.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-6">
-                                                        DJ Khaled
-                                                        <br />
-                                                        <span class="text-muted"><small>Offline</small></span>
-                                                    </div>
-
-                                                    <div class="col-xs-3 text-right">
-                                                        <btn class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i></btn>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="row">
-                                                    <div class="col-xs-3">
-                                                        <div class="avatar">
-                                                            <img src="../assets/img/faces/face-1.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-6">
-                                                        Creative Tim
-                                                        <br />
-                                                        <span class="text-success"><small>Available</small></span>
-                                                    </div>
-
-                                                    <div class="col-xs-3 text-right">
-                                                        <btn class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i></btn>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="row">
-                                                    <div class="col-xs-3">
-                                                        <div class="avatar">
-                                                            <img src="../assets/img/faces/face-3.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-6">
-                                                        Flume
-                                                        <br />
-                                                        <span class="text-danger"><small>Busy</small></span>
-                                                    </div>
-
-                                                    <div class="col-xs-3 text-right">
-                                                        <btn class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i></btn>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                            </div>
-                        </div>
-                        -->
                     </div>
                     <div class="col-lg-8 col-md-7">
                         <div class="card">
@@ -225,35 +160,7 @@
             </div>
         </div>
 
-
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-
-                        <li>
-                            <a href="http://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                               Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
-                </div>
-            </div>
-        </footer>
+        @include('partials.footer')
 
     </div>
 @endsection
@@ -279,19 +186,3 @@
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/demo.js"></script>
 
-	<script type="text/javascript">
-    	$(document).ready(function(){
-
-        	demo.initChartist();
-
-        	$.notify({
-            	icon: 'ti-gift',
-            	message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
-
-            },{
-                type: 'success',
-                timer: 4000
-            });
-
-    	});
-	</script>

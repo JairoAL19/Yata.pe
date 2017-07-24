@@ -1,9 +1,31 @@
-<!-- Main Footer -->
-<footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-        <a href="https://github.com/acacha/adminlte-laravel"></a><b>admin-lte-laravel</b></a>. A Laravel 5 package that switchs default Laravel scaffolding/boilerplate to AdminLTE template
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2015 <a href="http://acacha.org">Acacha.org</a>.</strong> Created by <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a>. See code at <a href="https://github.com/acacha/adminlte-laravel">Github</a>
+<footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+
+                        <li>
+                            <a href="http://www.yata.pe">
+                                Reciclar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.yata.pe/Reciclar/Perfil">
+                               Mi Perfil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.yata.pe/Testimonios">
+                                Testimonios
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.yata.pe/Contacto">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright pull-right">
+                    &copy; 2017, made <i class="fa fa-pagelines heart"></i> by <a href="http://www.yata.pe">Yata.pe</a>
+                </div>
 </footer>

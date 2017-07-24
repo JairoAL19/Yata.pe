@@ -6,7 +6,7 @@
     -->
 
         <div class="sidebar-wrapper">
-            <div class="logo" style="width: 100%; margin-left: 0;  background: #348CB2;  color: white;  border-right: 2px solid;">
+            <div class="logo" style="width: 100%; margin-left: 0;  background: #8DC538;  color: white;  border-right: 2px solid;">
                 <a href="/Reciclar/Tec" class="simple-text" style="color: white">
                     <b style="color: white">Yata</b>.pe
                 </a>
@@ -40,7 +40,20 @@
                 <li>
                     <a href="maps.html">
                         <i class="ti-map"></i>
-                        <p>Mapa</p>
+                        <p>Sobre Nosotros</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="maps.html">
+                        <i class="ti-medall"></i>
+                        <p>Testimonios</p>
+                    </a>
+                </li>
+                <li>
+                <li class="active-pro">
+                    <a href="/auth/logout">
+                        <i class="ti-power-off"></i>
+                        <p>CERRAR SESIÓN</p>
                     </a>
                 </li>
                 <li>

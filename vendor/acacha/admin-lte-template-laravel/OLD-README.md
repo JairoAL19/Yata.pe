@@ -50,8 +50,8 @@ Route::controllers([
 and route to /home
 
 <pre>
-Route::get('/home', ['middleware' => 'auth', function () {
-    return view('home');
+Route::get('/', ['middleware' => 'auth', function () {
+    return view('/');
 }]);
 </pre>
 

@@ -30,7 +30,7 @@ class Celular extends Controller
     }
     //LISTA DE MARCAS
         public function Iphone_P(){
-            $cel = Celus::where('marca', 'Iphone')->get();
+            $cel = Celus::where('marca', 'Iphone')->where('memoria', '0')->get();
             return view('recycle.celulares.iphone')->with('celular', $cel);
         }
         public function Samsung_P(){
@@ -74,22 +74,49 @@ class Celular extends Controller
     //FOFRMULARIO DE CELULARES
         public function P_Form ($cod_produc){
             $cel = Celus::where('cod_produc', $cod_produc)->get();
-            $perf = intval($cel[0]->precio_ini);
-            $buen = intval($cel[0]->precio_ini*0.9);
-            $regu = intval($cel[0]->precio_ini*0.75);
-            $malo = intval($cel[0]->precio_ini*0.35);
-            $defe = intval($cel[0]->precio_ini*0.17);
-            $bloq = intval($cel[0]->precio_ini*0.04);
-            return view('recycle.celulares.form_celulares')->with([
-                'celular' => $cel,
-                'perf'    => $perf,
-                'regu'    => $regu,
-                'malo'    => $malo,
-                'buen'    => $buen,
-                'defe'    => $defe,
-                'bloq'    => $bloq,
-            ]); 
+
+            if($cel[0]->marca == 'IPHONE'){
+                $cel = Celus::where('marca', 'IPHONE')->Where('cod_produc', $cod_produc)->where('memoria','>','0')->orderBy('memoria','ASC')->get();
+                return view('recycle.celulares.iphone_memoria')->with('celular', $cel); 
+            }else{               
+
+                $perf = intval($cel[0]->precio_ini);
+                $buen = intval($cel[0]->precio_ini*0.9);
+                $regu = intval($cel[0]->precio_ini*0.75);
+                $malo = intval($cel[0]->precio_ini*0.35);
+                $defe = intval($cel[0]->precio_ini*0.17);
+                $bloq = intval($cel[0]->precio_ini*0.04);
+                return view('recycle.celulares.form_celulares')->with([
+                    'celular' => $cel,
+                    'perf'    => $perf,
+                    'regu'    => $regu,
+                    'malo'    => $malo,
+                    'buen'    => $buen,
+                    'defe'    => $defe,
+                    'bloq'    => $bloq,
+                ]); 
+            }
         }
+        public function P_Form_iphone ($cod_produc, $memoria){
+            $cel = Celus::where('cod_produc', $cod_produc)->where('memoria', $memoria)->get();         
+
+                $perf = intval($cel[0]->precio_ini);
+                $buen = intval($cel[0]->precio_ini*0.9);
+                $regu = intval($cel[0]->precio_ini*0.75);
+                $malo = intval($cel[0]->precio_ini*0.35);
+                $defe = intval($cel[0]->precio_ini*0.17);
+                $bloq = intval($cel[0]->precio_ini*0.04);
+                return view('recycle.celulares.form_celulares')->with([
+                    'celular' => $cel,
+                    'perf'    => $perf,
+                    'regu'    => $regu,
+                    'malo'    => $malo,
+                    'buen'    => $buen,
+                    'defe'    => $defe,
+                    'bloq'    => $bloq,
+                ]); 
+        }
+
     //FOFRMULARIO DE CELULARES END      
 
     //GUARDADO DE SOLICITUD RECICLADO

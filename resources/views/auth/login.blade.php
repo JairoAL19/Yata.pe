@@ -45,7 +45,7 @@
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <strong>Whoops!</strong> Tenemos problemas con los datos ingresados, intenta denuevo.<br><br>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -84,8 +84,8 @@
                             <a href="/social/google" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Inicia Sesión usando Google+</a>
                         </div><!-- /.social-auth-links -->
 
-                        <a href="{{ url('/password/email') }}">I forgot my password</a><br>
-                        <a href="{{ url('/auth/register') }}" class="text-center">Register a new membership</a>
+                        <a href="{{ url('/password/email') }}">Olvide mi contraseña</a><br>
+                        <a href="{{ url('/auth/register') }}" class="text-center">No tengo cuenta</a>
 
                     </div><!-- /.login-box-body -->
 
@@ -106,7 +106,7 @@
 
                 <!-- Footer -->
                     <footer id="footer">
-                        <span class="copyright">&copy; 2017. Design: <a href="http://yata.pe">YataCP</a>.</span>
+                        <span class="copyright" style="color: white"> &copy; 2017. Design: <a style="color: white" href="http://yata.pe">YataCP</a>.</span>
                     </footer>
 
             </div>

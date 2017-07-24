@@ -38,6 +38,7 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 
 	//Formulario de reclamos
 	Route::get('/P/{cod_produc}', 'Reciclar\Celular@P_Form');
+	Route::get('/P/{cod_produc}/{memoria}', 'Reciclar\Celular@P_Form_iphone');
 	//Formulario de reclamos End
 
 	//Guardado de solicitud reclamos

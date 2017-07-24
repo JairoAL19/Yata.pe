@@ -8,7 +8,7 @@
 <link href="/css/progressbar.css" rel="stylesheet"/>
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
     <div class="main-panel" >
-        <nav class="navbar navbar-default" style="background: #348CB2; color: white">
+        <nav class="navbar navbar-default" style="background: #8DC538; color: white">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">
@@ -17,7 +17,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="Tec" style="color: white">¿Qué voy a reciclar?</a>
+                    <a class="navbar-brand" href="Tec" style="color: white">Recicla Ganando Dinero</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
@@ -131,7 +131,7 @@
                     <div id="celub2" style="">   
                     <a href="Celulares">             
                     <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/tablet.jpg">
-                    <label style="font-size: 120%">IPAD y TABLET</label>
+                    <label style="font-size: 120%">IPAD Y TABLET</label>
                     </a>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                     <p style="display: inline-block; font-size: 90%">¿Qué puedo reciclar?</p>
                     </div>
                     <div id="infotext" style="text-align: justify;">   
-                        Usted puede reciclar Celulares, Ipd, Tablets, reproductores, entre otros productos que ya no use, Yata.pe se encarga de repararlo y darlo a otro usuario a un precio muy accesible. Recicla tu articulo hoy.
+                        Usted puede reciclar Celulares, Ipod, Tablets, reproductores, entre otros productos que ya no use, Yata.pe se encarga de repararlo y darlo a otro usuario a un precio muy accesible. Recicla tu articulo hoy.
                     </div>
                 </div>
                 <div id="info" class="boton" style=" border: 0px solid black; display: inline-block; margin-left: 3%; float: left;">                
@@ -185,34 +185,8 @@
 
         </div>
 
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-
-                        <li>
-                            <a href="http://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                               Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
-                </div>
-            </div>
-        </footer>
+        @include('partials.footer')
+        
 
     </div>
 @endsection
@@ -238,19 +212,3 @@
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 	<script src="../assets/js/demo.js"></script>
 
-	<script type="text/javascript">
-    	$(document).ready(function(){
-
-        	demo.initChartist();
-
-        	$.notify({
-            	icon: 'ti-gift',
-            	message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
-
-            },{
-                type: 'success',
-                timer: 4000
-            });
-
-    	});
-	</script>

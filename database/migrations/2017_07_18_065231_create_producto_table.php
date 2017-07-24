@@ -16,6 +16,7 @@ class CreateProductoTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('cod_produc');
+            $table->integer('memoria');
             $table->string('foto');
             $table->float('precio_ini')->NotNull;
             $table->string('marca');
