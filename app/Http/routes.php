@@ -17,9 +17,8 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	
-	Route::get('/Tec', function () {
-    	return view('recycle.home');
-	});
+
+	Route::get('/Tec', ['uses' => 'Reciclar\Celular@index', 'as' => '/Tec']);
 	Route::get('/Perfil', ['uses' => 'Auth\Perfil@index', 'as' => '/Perfil']);
 	Route::get('/Celulares', function () {
     	return view('recycle.celulares.celulares');
@@ -52,5 +51,9 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	//Despues de enviar solicitud
 	Route::get('/Aceptado/{data}', ['uses' => 'Reciclar\Celular@index_aceptado', 'as' => '/Aceptado']);
 	//Despues de enviar solicitud End
+
+	
 });
+Route::get('social/{provider?}', 'SocialController@getSocialAuth');
+Route::get('callback/{provider?}', 'SocialController@getSocialAuthCallback');
 

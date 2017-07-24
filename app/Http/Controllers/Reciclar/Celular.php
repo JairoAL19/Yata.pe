@@ -18,7 +18,7 @@ class Celular extends Controller
      */
     public function index()
     {
-        
+            return view('recycle.home');
     }
     public function index_aceptado($data){
         $solici_r = Solicitud_r::find($data);

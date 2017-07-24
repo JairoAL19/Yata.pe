@@ -46,6 +46,7 @@ trait AuthenticatesUsers
         }
 
         $credentials = $this->getCredentials($request);
+
         if (Auth::attempt($credentials, $request->has('remember'))) {
             return $this->handleUserWasAuthenticated($request, $throttles);
         }
@@ -73,14 +74,14 @@ trait AuthenticatesUsers
      */
     protected function handleUserWasAuthenticated(Request $request, $throttles)
     {
-
         if ($throttles) {
             $this->clearLoginAttempts($request);
         }
+
         if (method_exists($this, 'authenticated')) {
-            
             return $this->authenticated($request, Auth::user());
         }
+
         return redirect()->intended($this->redirectPath());
     }
 
