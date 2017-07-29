@@ -30,7 +30,7 @@ class Celular extends Controller
     }
     //LISTA DE MARCAS
         public function Iphone_P(){
-            $cel = Celus::where('marca', 'Iphone')->where('memoria', '0')->get();
+            $cel = Celus::where('marca', 'Iphone')->where('memoria', '0')->orderBy('nombre', 'ASC')->get();
             return view('recycle.celulares.iphone')->with('celular', $cel);
         }
         public function Samsung_P(){
@@ -129,6 +129,7 @@ class Celular extends Controller
             $solici->precio_fin = $data->precio_fin;
             $solici->metodo_p = $data->metodo_p;
             $solici->estado = $data->estado;
+            $solici->courier = 'Pendiente';
             $solici->save();
             return redirect()->route('/Aceptado', ['data' =>  $solici->id, 'marca' => $data->marca.'%Modelo'.$data->cod_produc,   ]);      
         }

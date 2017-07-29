@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="/Reciclar/Solicitudes">
                         <i class="ti-view-list-alt"></i>
                         <p>Solicitudes</p>
                     </a>

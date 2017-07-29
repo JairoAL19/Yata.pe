@@ -1,0 +1,112 @@
+@extends('app')
+
+@section('htmlheader_title')
+    Home
+@endsection
+
+@section('main-content')
+
+<!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
+    <div class="main-panel" >
+        <nav class="navbar navbar-default" style="background: #8DC538; color: white">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">Seleccione Modelo</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
+
+                        Hola, {{ Auth::User()->name }}
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div class="content" id="bg" >
+
+            <style>
+                @media screen and (max-width: 1680px) {
+                    #cel{
+                        border-radius: 10px 10px 10px 10px;
+                        -moz-border-radius: 10px 10px 10px 10px;
+                        -webkit-border-radius: 10px 10px 10px 10px;
+                        border: 8px outset #d4d4d4;       
+                        width: 18%;
+                        background: white;    
+                        padding: 1%;      
+                        margin-left: 2%;
+                        margin-bottom: 2%;
+                    }
+                }
+                @media screen and (max-width: 1280px) {
+                    #cel{
+                        border-radius: 10px 10px 10px 10px;
+                        -moz-border-radius: 10px 10px 10px 10px;
+                        -webkit-border-radius: 10px 10px 10px 10px;
+                        border: 8px outset #d4d4d4;       
+                        width: 47%;
+                        background: white;    
+                        padding: 1%;      
+                        margin-left: 2%;
+                        margin-bottom: 2%;
+                    }                    
+                }
+
+            </style>
+            <div class="CATEGORIAS1" style="margin-top: 2%">
+                @foreach($solicitudes as $solicitud)
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    @foreach($celulares as $cel)
+                        @if($solicitud->cod_produc == $cel->nombre)
+                            <img style="width: 100%; " src="../../{{ $cel->foto }}">
+                            <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$cel->nombre}}</label>
+                        @endif
+                    @endforeach
+                    <b><p style="font-size: 14px; width: 100%;text-align: center;">Fecha: {{ $solicitud->fecha_r }}</p></b>
+                    <b><p style="font-size: 14px; width: 100%;text-align: center; color: green">Pago: S/.{{ $solicitud->precio_fin }}</p></b>
+                    <b><p style="font-size: 14px; width: 100%;text-align: center;">Estado: {{ $solicitud->estado }}</p></b>
+                    <b><p style="font-size: 12px; width: 100%;text-align: center;">Metodo Pago: {{ $solicitud->metodo_p }}</p></b>
+                    <b><p style="font-size: 12px; width: 100%;text-align: center;">Courier: <b style="color: red">{{ $solicitud->courier }}</b></p></b>
+                    <a href="/Reciclar/Cancelar/{{$solicitud->id}}">
+                    <button class="btn btn-warning" name="Cancelar" style="width: 100%; text-align: center;">Cancelar Solicitud</button>
+                    </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+
+        </div>
+
+
+        @include('partials.footer')
+
+    </div>
+@endsection
+    <!--   Core JS Files   -->
+    <script src="../../assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="../../assets/js/bootstrap-checkbox-radio.js"></script>
+
+	<!--  Charts Plugin -->
+	<script src="../../assets/js/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="../../assets/js/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
+	<script src="../../assets/js/paper-dashboard.js"></script>
+
+	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+	<script src="../../assets/js/demo.js"></script>

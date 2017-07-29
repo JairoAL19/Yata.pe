@@ -45,6 +45,10 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	Route::post('/Solici', 'Reciclar\Celular@solicitud');
 	//Guardado de solicitud reclamos End
 
+	//Solicitudes
+	Route::get('/Solicitudes', 'Reciclar\Solicitud@index');
+	//Solicitudes End
+
 	//Actualizar Perfil
 	Route::post('/Actualizar_P', 'Auth\Perfil@actualizar_p');
 	//Actualizar Perfil End
