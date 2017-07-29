@@ -1,4 +1,4 @@
-@extends('app')
+@extends('app_solicitudes')
 
 @section('htmlheader_title')
     Home
@@ -17,7 +17,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">Seleccione Modelo</a>
+                    <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">Solicitudes</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
@@ -74,9 +74,16 @@
                     <b><p style="font-size: 14px; width: 100%;text-align: center;">Estado: {{ $solicitud->estado }}</p></b>
                     <b><p style="font-size: 12px; width: 100%;text-align: center;">Metodo Pago: {{ $solicitud->metodo_p }}</p></b>
                     <b><p style="font-size: 12px; width: 100%;text-align: center;">Courier: <b style="color: red">{{ $solicitud->courier }}</b></p></b>
-                    <a href="/Reciclar/Cancelar/{{$solicitud->id}}">
-                    <button class="btn btn-warning" name="Cancelar" style="width: 100%; text-align: center;">Cancelar Solicitud</button>
+                    <a onClick="confirmation({{$solicitud->id}})">
+                    <button class="btn btn-warning" name="Cancelar" id="confirma" value="{{$solicitud->id}}" style="width: 100%; text-align: center;">Cancelar Solicitud</button>
                     </a>
+                    <script>
+                        function  confirmation($cod){
+                            if(confirm('¿Estas seguro que vas a cancelar esta Solicitud?')){
+                                location.href='/Reciclar/Cancelar/'+$cod;
+                            }
+                        }
+                    </script>
                     </div>
                 </div>
                 @endforeach
