@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-
+use App\Models\Solicitud_r;
+use App\Models\Papelera_Solici;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use Auth;
 
 class Perfil extends Controller
 {
@@ -17,7 +19,11 @@ class Perfil extends Controller
      */
     public function index()
     {
-        return view('recycle.perfil');
+        $solici = Solicitud_r::where('cod_user', Auth::User()->id)->get();
+        $solici_r = Papelera_Solici::where('cod_user', Auth::User()->id)->get();
+        $cont = count($solici);
+        $cont = $cont + count($solici_r);
+        return view('recycle.perfil')->with('solici', $cont);
     }
     public function actualizar_p(Request $request){
         $data = $request;
