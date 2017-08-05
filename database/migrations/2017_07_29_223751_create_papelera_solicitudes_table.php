@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSolRecicladoTable extends Migration
+class CreatePapeleraSolicitudesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateSolRecicladoTable extends Migration
      */
     public function up()
     {
-        Schema::create('sol_reciclado', function (Blueprint $table) {
+        Schema::create('papelera_solicitudes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cod_user')->NotNull;
             $table->string('cod_produc');
@@ -23,7 +23,8 @@ class CreateSolRecicladoTable extends Migration
             $table->string('obs');
             $table->string('courier', 250);
             $table->timestamps();
-        });    }
+        });    
+    }
 
     /**
      * Reverse the migrations.
@@ -32,6 +33,6 @@ class CreateSolRecicladoTable extends Migration
      */
     public function down()
     {
-        Schema::drop('sol_reciclado');
+        Schema::drop('papelera_solicitudes');
     }
 }

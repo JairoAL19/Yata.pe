@@ -53,7 +53,7 @@
                             <div class="text-center">
                                 <div class="row">
                                     <div class="col-md-3 col-md-offset-1">
-                                        <h5 style="color: blue">12<br /><small>Solicitudes</small></h5>
+                                        <h5 style="color: blue">{{ $solici }}<br /><small>Solicitudes</small></h5>
                                     </div>
                                     <div class="col-md-4">
                                         <h5 style="color: blue">12<br /><small>Concretado</small></h5>
