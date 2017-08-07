@@ -38,7 +38,7 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 
 	//Formulario de reclamos
 	Route::get('/P/{cod_produc}', 'Reciclar\Celular@P_Form');
-	Route::get('/P/{cod_produc}/{memoria}', 'Reciclar\Celular@P_Form_iphone');
+	Route::get('/P/{cod_produc}/{memoria}', 'Reciclar\Celular@P_Form_Sub');
 	//Formulario de reclamos End
 
 	//Guardado de solicitud reclamos
@@ -62,6 +62,13 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	//Despues de enviar solicitud End
 
 	
+});
+
+Route::group(['prefix' => '','middleware' => 'admin'], function() {
+
+	Route::get('/admin845967', ['uses' => 'Admin@index', 'as' => '/admin845967']);
+	Route::get('/admin845967/products', ['uses' => 'Admin@products', 'as' => '/admin845967/products']);
+	Route::get('/admin845967/agregar_products', ['uses' => 'Admin@create_products', 'as' => '/admin845967/agregar_products']);
 });
 Route::get('social/{provider?}', 'SocialController@getSocialAuth');
 Route::get('callback/{provider?}', 'SocialController@getSocialAuthCallback');

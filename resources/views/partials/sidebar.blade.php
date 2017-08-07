@@ -5,8 +5,39 @@
         Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
     -->
 
+        <style>
+            @media screen and (max-width: 1680px) {
+                .stars{
+                    background-image: url(../../../img/indice2.png); 
+                    width: 80%; 
+                    height: 15%; 
+                    margin-left: 9%;
+                }
+            }
+            @media screen and (max-width: 1280px) {
+                .stars{
+                    background-image: url(../../../img/indice2.png); 
+                    width: 82%; 
+                    height: 100px; 
+                    margin-left: 10%;
+                }
+            }  
+            @media screen and (max-width: 960px) and (min-width: 768px) {
+                .stars{
+                    display: none;
+                }
+            }          
+            @media screen and (max-width: 767px) {
+                .stars{
+                    background-image: url(../../../img/indice2.png); 
+                    width: 100%; 
+                    height: 100px; 
+                    margin-left: 5%;
+                }
+            }
+        </style>
         <div class="sidebar-wrapper">
-            <div class="logo" style="width: 100%; margin-left: 0;  background: #8DC538;  color: white;  border-right: 2px solid;">
+            <div class="logo" style="width: 100%; margin-left: 0;  background: #4492E0;  color: white;  border-right: 2px solid;">
                 <a href="/Reciclar/Tec" class="simple-text" style="color: white">
                     <b style="color: white">Yata</b>.pe
                 </a>
@@ -49,6 +80,7 @@
                         <p>Testimonios</p>
                     </a>
                 </li>
+                <div class="stars"></div>                
                 <li>
                 <li class="active-pro">
                     <a href="/auth/logout">

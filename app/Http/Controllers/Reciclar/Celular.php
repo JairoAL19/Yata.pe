@@ -86,6 +86,8 @@ class Celular extends Controller
                 $malo = intval($cel[0]->precio_ini*0.35);
                 $defe = intval($cel[0]->precio_ini*0.17);
                 $bloq = intval($cel[0]->precio_ini*0.04);
+                $max  = 5;
+                $min  = 0;
                 return view('recycle.celulares.form_celulares')->with([
                     'celular' => $cel,
                     'perf'    => $perf,
@@ -94,10 +96,12 @@ class Celular extends Controller
                     'buen'    => $buen,
                     'defe'    => $defe,
                     'bloq'    => $bloq,
+                    'max'     => $max,
+                    'min'     => $min,
                 ]); 
             }
         }
-        public function P_Form_iphone ($cod_produc, $memoria){
+        public function P_Form_Sub ($cod_produc, $memoria){
             $cel = Celus::where('cod_produc', $cod_produc)->where('memoria', $memoria)->get();         
 
                 $perf = intval($cel[0]->precio_ini);
@@ -106,6 +110,9 @@ class Celular extends Controller
                 $malo = intval($cel[0]->precio_ini*0.35);
                 $defe = intval($cel[0]->precio_ini*0.17);
                 $bloq = intval($cel[0]->precio_ini*0.04);
+                $max  = 5;
+                $min  = 0;
+
                 return view('recycle.celulares.form_celulares')->with([
                     'celular' => $cel,
                     'perf'    => $perf,
@@ -114,6 +121,8 @@ class Celular extends Controller
                     'buen'    => $buen,
                     'defe'    => $defe,
                     'bloq'    => $bloq,
+                    'max'     => $max,
+                    'min'     => $min,
                 ]); 
         }
 
