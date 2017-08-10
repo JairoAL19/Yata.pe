@@ -95,7 +95,7 @@ class Solicitud extends Controller
             $pape->precio_fin = $soli->precio_fin;
             $pape->metodo_p = $soli->metodo_p;
             $pape->estado = $soli->estado;
-            $pape->courier = 'Cancelado';
+            $pape->courier = 'Cancelado por Usuario';
             $pape->save();
             $soli->delete();
             return redirect('/Reciclar/Solicitudes');

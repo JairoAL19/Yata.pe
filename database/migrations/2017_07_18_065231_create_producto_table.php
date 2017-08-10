@@ -20,6 +20,7 @@ class CreateProductoTable extends Migration
             $table->string('foto');
             $table->float('precio_ini')->NotNull;
             $table->string('marca');
+            $table->string('dispo',1);
             $table->timestamps();
         });
     }

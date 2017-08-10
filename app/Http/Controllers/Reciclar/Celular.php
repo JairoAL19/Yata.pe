@@ -30,43 +30,43 @@ class Celular extends Controller
     }
     //LISTA DE MARCAS
         public function Iphone_P(){
-            $cel = Celus::where('marca', 'Iphone')->where('memoria', '0')->orderBy('nombre', 'ASC')->get();
+            $cel = Celus::where('marca', 'Iphone')->where('memoria', '0')->where('dispo', 'A')->orderBy('nombre', 'ASC')->get();
             return view('recycle.celulares.iphone')->with('celular', $cel);
         }
         public function Samsung_P(){
-            $cel = Celus::where('marca', 'Samsung')->get();
+            $cel = Celus::where('marca', 'Samsung')->where('dispo', 'A')->where('precio_ini','!=','0')->get();
             return view('recycle.celulares.samsung')->with('celular', $cel);
         }
         public function HTC_P(){
-            $cel = Celus::where('marca', 'HTC')->get();
+            $cel = Celus::where('marca', 'HTC')->where('dispo', 'A')->where('precio_ini','!=','0')->get();
             return view('recycle.celulares.htc')->with('celular', $cel);
         }
         public function Huawei_P(){
-            $cel = Celus::where('marca', 'Huawei')->get();
+            $cel = Celus::where('marca', 'Huawei')->where('dispo', 'A')->where('precio_ini','!=','0')->get();
             return view('recycle.celulares.huawei')->with('celular', $cel);
         }
         public function Motorola_P(){
-            $cel = Celus::where('marca', 'Motorola')->get();
+            $cel = Celus::where('marca', 'Motorola')->where('dispo', 'A')->where('precio_ini','!=','0')->get();
             return view('recycle.celulares.motorola')->with('celular', $cel);
         }
         public function LG_P(){
-            $cel = Celus::where('marca', 'LG')->get();
+            $cel = Celus::where('marca', 'LG')->where('dispo', 'A')->where('precio_ini','!=','0')->get();
             return view('recycle.celulares.lg')->with('celular', $cel);
         }
         public function ZTE_P(){
-            $cel = Celus::where('marca', 'ZTE')->get();
+            $cel = Celus::where('marca', 'ZTE')->where('dispo', 'A')->where('precio_ini','!=','0')->get();
             return view('recycle.celulares.zte')->with('celular', $cel);
         }
         public function Azumi_P(){
-            $cel = Celus::where('marca', 'Azumi')->get();
+            $cel = Celus::where('marca', 'Azumi')->where('dispo', 'A')->where('precio_ini','!=','0')->get();
             return view('recycle.celulares.azumi')->with('celular', $cel);
         }
         public function Nokia_P(){
-            $cel = Celus::where('marca', 'Nokia')->get();
+            $cel = Celus::where('marca', 'Nokia')->where('dispo', 'A')->where('precio_ini','!=','0')->get();
             return view('recycle.celulares.nokia')->with('celular', $cel);
         }
         public function Blackberry_P(){
-            $cel = Celus::where('marca', 'Blackberry')->get();
+            $cel = Celus::where('marca', 'Blackberry')->where('dispo', 'A')->where('precio_ini','!=','0')->get();
             return view('recycle.celulares.blackberry')->with('celular', $cel);
         }
     //LISTA DE MARCAS END
@@ -76,16 +76,18 @@ class Celular extends Controller
             $cel = Celus::where('cod_produc', $cod_produc)->get();
 
             if($cel[0]->marca == 'IPHONE'){
-                $cel = Celus::where('marca', 'IPHONE')->Where('cod_produc', $cod_produc)->where('memoria','>','0')->orderBy('memoria','ASC')->get();
+                $cel = Celus::where('marca', 'IPHONE')->Where('cod_produc', $cod_produc)->where('dispo', 'A')->where('memoria','>','0')->orderBy('memoria','ASC')->get();
                 return view('recycle.celulares.iphone_memoria')->with('celular', $cel); 
             }else{               
-
+                $cel = Celus::where('cod_produc', $cod_produc)->where('precio_ini', '!=', '0')->get();
                 $perf = intval($cel[0]->precio_ini);
                 $buen = intval($cel[0]->precio_ini*0.9);
                 $regu = intval($cel[0]->precio_ini*0.75);
                 $malo = intval($cel[0]->precio_ini*0.35);
                 $defe = intval($cel[0]->precio_ini*0.17);
                 $bloq = intval($cel[0]->precio_ini*0.04);
+                $max  = 5;
+                $min  = 0;
                 return view('recycle.celulares.form_celulares')->with([
                     'celular' => $cel,
                     'perf'    => $perf,
@@ -94,10 +96,12 @@ class Celular extends Controller
                     'buen'    => $buen,
                     'defe'    => $defe,
                     'bloq'    => $bloq,
+                    'max'     => $max,
+                    'min'     => $min,
                 ]); 
             }
         }
-        public function P_Form_iphone ($cod_produc, $memoria){
+        public function P_Form_Sub ($cod_produc, $memoria){
             $cel = Celus::where('cod_produc', $cod_produc)->where('memoria', $memoria)->get();         
 
                 $perf = intval($cel[0]->precio_ini);
@@ -106,6 +110,9 @@ class Celular extends Controller
                 $malo = intval($cel[0]->precio_ini*0.35);
                 $defe = intval($cel[0]->precio_ini*0.17);
                 $bloq = intval($cel[0]->precio_ini*0.04);
+                $max  = 5;
+                $min  = 0;
+
                 return view('recycle.celulares.form_celulares')->with([
                     'celular' => $cel,
                     'perf'    => $perf,
@@ -114,6 +121,8 @@ class Celular extends Controller
                     'buen'    => $buen,
                     'defe'    => $defe,
                     'bloq'    => $bloq,
+                    'max'     => $max,
+                    'min'     => $min,
                 ]); 
         }
 

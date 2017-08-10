@@ -8,7 +8,7 @@
 
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
     <div class="main-panel" >
-        <nav class="navbar navbar-default" style="background: #8DC538; color: white">
+        <nav class="navbar navbar-default" style="background: #4492E0; color: white">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">
@@ -73,10 +73,18 @@
                     <b><p style="font-size: 14px; width: 100%;text-align: center; color: green">Pago: S/.{{ $solicitud->precio_fin }}</p></b>
                     <b><p style="font-size: 14px; width: 100%;text-align: center;">Estado: {{ $solicitud->estado }}</p></b>
                     <b><p style="font-size: 12px; width: 100%;text-align: center;">Metodo Pago: {{ $solicitud->metodo_p }}</p></b>
-                    <b><p style="font-size: 12px; width: 100%;text-align: center;">Courier: <b style="color: red">{{ $solicitud->courier }}</b></p></b>
-                    <a onClick="confirmation({{$solicitud->id}})">
-                    <button class="btn btn-warning" name="Cancelar" id="confirma" value="{{$solicitud->id}}" style="width: 100%; text-align: center;">Cancelar Solicitud</button>
-                    </a>
+                    @if($solicitud->courier == 'Pendiente')
+                        <b><p style="font-size: 12px; width: 100%;text-align: center;">Courier: <b style="color: red">{{ $solicitud->courier }}</b></p></b>
+                    @else
+                         <b><p style="font-size: 12px; width: 100%;text-align: center;">Courier: <b style="color: green">{{ $solicitud->courier }}</b></p></b>
+                    @endif
+                    @if($solicitud->courier == 'Pendiente')
+                        <a onClick="confirmation({{$solicitud->id}})">                    
+                            <button class="btn btn-warning" name="Cancelar" id="confirma" value="{{$solicitud->id}}" style="width: 100%; text-align: center;">Cancelar Solicitud</button>                    
+                        </a>
+                    @else
+                        <button class="btn btn-success" name="Solicitud Aceptada" id="confirma" value="{{$solicitud->id}}" style="width: 100%; text-align: center;">Solicitud Aceptada</button>
+                    @endif
                     <script>
                         function  confirmation($cod){
                             if(confirm('¿Estas seguro que vas a cancelar esta Solicitud?')){
@@ -84,11 +92,12 @@
                             }
                         }
                     </script>
-                    </div>
+                    </div>                    
                 </div>
                 @endforeach
             </div>
-
+            </br>
+            *Solo se puede cancelar una solicitud de reciclado mientras el courier no haya sido asignado (Estado: Pendiente). Una vez fue asignado si desea cancelar el recojo de su articulo tendrá que llamar al (01)222-2222, indicando el motivo.
         </div>
 
 

@@ -6,7 +6,7 @@
     -->
 
         <div class="sidebar-wrapper">
-            <div class="logo" style="width: 100%; margin-left: 0;  background: #8DC538;  color: white;  border-right: 2px solid;">
+            <div class="logo" style="width: 100%; margin-left: 0;  background: #4492E0;  color: white;  border-right: 2px solid;">
                 <a href="/Reciclar/Tec" class="simple-text" style="color: white">
                     <b style="color: white">Yata</b>.pe
                 </a>

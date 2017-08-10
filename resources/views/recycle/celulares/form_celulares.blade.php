@@ -2,13 +2,15 @@
 
 @section('htmlheader_title')
     Home
-@endsection
 
+@endsection
+  
 @section('main-content')
+
 
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
     <div class="main-panel" >
-        <nav class="navbar navbar-default" style="background: #8DC538; color: white">
+        <nav class="navbar navbar-default" style="background: #4492E0; color: white">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">
@@ -50,22 +52,19 @@
                     </div>                    
                     <div class="col-lg-8 col-md-7">
                         <div class="card">
-                            <div class="header">
-                                <h4 class="title">Caracteríticas</h4>
-                            </div>
                             <div class="content">
                                 <form action="/Reciclar/Solici" method="post">
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Marca</label>
-                                                <input type="text" class="form-control border-input" name="marca" disabled value="{{ $celular[0]->marca }}">
+                                                <input type="text" class="form-control border-input" name="marca" disabled value="{{ $celular[0]->marca }}" style="background: #fffcf5">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Modelo</label>
-                                                <input type="text" class="form-control border-input" name="modelo" disabled value="{{ $celular[0]->nombre }}">
+                                                <input type="text" class="form-control border-input" name="modelo" disabled value="{{ $celular[0]->nombre }}" style="background: #fffcf5">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -124,9 +123,10 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="form-group">                                                
+                                            <div class="form-group">    
+
                                                 <label>Fecha de recojo</label>
-                                                <input type="text" class="form-control border-input" required name="fecha_r" placeholder="22/06/2017" >
+                                                <input type="text" id="datepicker" class="form-control border-input" required name="fecha_r" placeholder="Día/Mes/Año" readonly style="background: #fffcf5">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -135,6 +135,14 @@
                                                 <input type="text" class="form-control border-input" required name="ciudad" placeholder="Ejemplo, Lima">
                                             </div>
                                         </div>
+                                        <p style="margin-left: 2.5%; color: gray; font-size: 12px">*Al "Reciclar" Aceptas los <a href="#">Terminos de Servicio</a> y un asesor se comunicará contigo en las siguientes 24h.</p>
+                                        <p style="margin-left: 2.5%; color: gray; font-size: 12px">*Se pagará según el estado verificar que el <a href="#" onclick="bajar()">estado</a> este correcto.</p>
+                                        <script>
+                                            function bajar(){
+                                                document.getElementById("estados").scrollIntoView();
+                                            }
+                                        </script>
+                                        <p style="margin-left: 2.5%; color: gray; font-size: 12px">*Solo se muestran las fechas disponibles de recojo</p>
                                     </div>
                                     <div class="text-center">
                                         <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
@@ -143,14 +151,14 @@
                                         <input type="hidden" name="cod_user" value="{{ Auth::User()->id }}" />
                                         <input type="hidden" id="monto" name="precio_fin" value="{{ $buen }}" />
                                         <input type="hidden" name="metodo_p" value="efectivo" />
-                                        <button type="submit" class="btn btn-info btn-fill btn-wd">Reciclar</button>
+                                        <button type="submit" class="btn btn-info btn-fill btn-wd" onclick="activar()">Reciclar</button>
                                     </div>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8 col-md-7">
+                    <div class="col-lg-8 col-md-7" id="estados">
                         <h4 style="margin-top: 0%">Estado:</h4>
                         <p style="font-size: 90%"><b>Perfecto</b>: Funciona a la perfección, como si nunca hubiera sido usado. Debe incluir caja original y accesorios.</p>
                         <p style="font-size: 90%"><b>Bueno</b>: Funciones implecables. Poco desgaste y rasgones, tales como rayaduras y rasguños, leves.</p>
@@ -192,3 +200,19 @@
 
     <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
     <script src="../../../assets/js/demo.js"></script>
+      <script>
+
+          $( function() {
+                var max = {{ $max }};
+                var min = {{ $min }};
+                $( "#datepicker" ).datepicker({
+                   maxDate: '+'+max+'d',
+                   minDate: '+'+min+'d',
+                   dateFormat: 'dd/mm/yy',
+                });
+          });
+          function activar(){
+               document.getElementById("datepicker").style.disabled = false;
+          }
+      </script>
+

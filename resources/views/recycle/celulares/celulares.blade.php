@@ -8,7 +8,7 @@
 <link href="/css/progressbar.css" rel="stylesheet"/>
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
     <div class="main-panel" >
-        <nav class="navbar navbar-default" style="background: #8DC538; color: white">
+        <nav class="navbar navbar-default" style="background: #4492E0; color: white">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">

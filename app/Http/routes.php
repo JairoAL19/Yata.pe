@@ -38,7 +38,7 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 
 	//Formulario de reclamos
 	Route::get('/P/{cod_produc}', 'Reciclar\Celular@P_Form');
-	Route::get('/P/{cod_produc}/{memoria}', 'Reciclar\Celular@P_Form_iphone');
+	Route::get('/P/{cod_produc}/{memoria}', 'Reciclar\Celular@P_Form_Sub');
 	//Formulario de reclamos End
 
 	//Guardado de solicitud reclamos
@@ -62,6 +62,41 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	//Despues de enviar solicitud End
 
 	
+});
+Route::group(['prefix' => '','middleware' => 'auth'], function() {
+	Route::group(['prefix' => '','middleware' => 'admin'], function() {
+
+		Route::get('/admin845967', ['uses' => 'Admin@index', 'as' => '/admin845967']);
+		Route::get('/admin845967/products', ['uses' => 'Admin@products', 'as' => '/admin845967/products']);
+		Route::get('/admin845967/categorias', ['uses' => 'Admin@categorias', 'as' => '/admin845967/categorias']);
+
+		Route::get('/admin845967/agregar_products', ['uses' => 'Admin@create_products', 'as' => '/admin845967/agregar_products']);
+		Route::get('/admin845967/agregar_categorias', ['uses' => 'Admin@create_categorias']);
+
+		Route::get('/admin845967/products/activar/{id}', ['uses' => 'Admin@products_activar']);
+		Route::get('/admin845967/products/desactivar/{id}', ['uses' => 'Admin@products_desactivar']);
+		Route::get('/admin845967/products/activos', ['uses' => 'Admin@products_activos']);
+		Route::get('/admin845967/products/inactivos', ['uses' => 'Admin@products_inactivos']);
+		Route::get('/admin845967/categorias/activos', ['uses' => 'Admin@categorias_activos']);
+		Route::get('/admin845967/categorias/inactivos', ['uses' => 'Admin@categorias_inactivos']);
+
+		Route::post('/admin845967/agregar_products/15898', ['uses' => 'Admin@create_products_form', 'as' => '/admin845967/agregar_products/15898']);
+		Route::post('/admin845967/agregar_categorias/15898', ['uses' => 'Admin@create_categorias_form']);
+
+		Route::get('/admin845967/usuarios', ['uses' => 'Admin@usuarios']);
+		Route::get('/admin845967/usuario/activar/{id}', ['uses' => 'Admin@usuario_activar']);
+		Route::get('/admin845967/usuario/desactivar/{id}', ['uses' => 'Admin@usuario_desactivar']);	
+		Route::get('/admin845967/usuarios/activos', ['uses' => 'Admin@usuarios_activos']);	
+		Route::get('/admin845967/usuarios/inactivos', ['uses' => 'Admin@usuarios_inactivos']);	
+
+		Route::get('/admin845967/Solicitudes_A', ['uses' => 'Admin@solicitudes_A']);
+		Route::get('/admin845967/Solicitudes_P', ['uses' => 'Admin@solicitudes_P']);
+		Route::get('/admin845967/Solicitudes_I', ['uses' => 'Admin@solicitudes_I']);
+		Route::get('/admin845967/Solicitudes_T', ['uses' => 'Admin@solicitudes_T']);
+		Route::get('/admin845967/Solicitudes_Editar/{id}', ['uses' => 'Admin@solicitudes_Editar']);
+		Route::post('/admin845967/Solicitudes_Editar/{id}', ['uses' => 'Admin@solicitudes_Editar_post']);		
+
+	});
 });
 Route::get('social/{provider?}', 'SocialController@getSocialAuth');
 Route::get('callback/{provider?}', 'SocialController@getSocialAuthCallback');

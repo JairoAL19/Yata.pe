@@ -15,11 +15,13 @@ class CreatePapeleraSolicitudesTable extends Migration
         Schema::create('papelera_solicitudes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cod_user')->NotNull;
+            $table->string('act',1);
             $table->string('cod_produc');
             $table->date('fecha_r');
             $table->float('precio_fin')->NotNull;
             $table->string('metodo_p');
             $table->string('estado');
+            $table->string('obs');
             $table->string('courier', 250);
             $table->timestamps();
         });    

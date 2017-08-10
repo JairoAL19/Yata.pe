@@ -44,40 +44,34 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
-                    <a href="/Reciclar/Tec">
-                        <i class="ti-reload"></i>
-                        <p>Reciclar</p>
+                <li>
+                    <a href="/admin845967/products">
+                        <i class="ti-mobile"></i>
+                        <p>Productos</p>
                     </a>
                 </li>
                 <li >
-                    <a href="/Reciclar/Perfil">
+                    <a href="/admin845967/usuarios">
                         <i class="ti-user"></i>
-                        <p>Mi Perfil</p>
+                        <p>Usuarios</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/Reciclar/Solicitudes">
+                    <a href="/admin845967/Solicitudes_P">
                         <i class="ti-view-list-alt"></i>
                         <p>Solicitudes</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
+                    <a href="https://dashboard.zopim.com/?lang=es#home" target="_blank">
                         <i class="ti-text"></i>
                         <p>Contacto</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
-                        <i class="ti-map"></i>
-                        <p>Sobre Nosotros</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="ti-medall"></i>
-                        <p>Testimonios</p>
+                    <a href="/Reciclar/Tec">
+                        <i class="ti-hand-point-right"></i>
+                        <p>Pagina Principal</p>
                     </a>
                 </li>
                 <div class="stars"></div>                
