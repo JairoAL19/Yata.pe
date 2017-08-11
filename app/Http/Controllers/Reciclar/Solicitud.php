@@ -21,11 +21,37 @@ class Solicitud extends Controller
 
     public function index(){
         $soli = Solicitud_r::where('cod_user', Auth::user()->id)->orderBy('created_at', 'ASC')->get();
-        $cel = Celus::All();
-        return view('recycle.solicitudes')->with([
-            'solicitudes' => $soli,
-            'celulares'   => $cel,
-        ]); 
+        $soli_reci = Papelera_Solici::where('cod_user', Auth::user()->id)->orderBy('act', 'DES')->get();
+        $cont = count($soli);
+        if ($cont != 0) {
+            for ($i=1; $i <= $cont; $i++) { 
+            $data[$i] = new Solicitud_r();
+            }
+            $h=1;
+            foreach ($soli as $solici){
+                $cel = Celus::where('nombre', $solici->cod_produc)->where('precio_ini','!=',0)->first();
+                $solici->nombre = $cel->nombre;
+                $solici->foto = $cel->foto;
+                $data[$h] = $solici;
+                $h++;
+            }
+            foreach ($soli_reci as $solici_reci){
+                $cel = Celus::where('nombre', $solici_reci->cod_produc)->where('precio_ini','!=',0)->first();
+                $solici_reci->nombre = $cel->nombre;
+                $solici_reci->foto = $cel->foto;
+                $data[$h] = $solici_reci;
+                $h++;
+            }
+            return view('recycle.solicitudes')->with([
+                'data' => $data,
+            ]); 
+        }else{
+            $data= [];
+            return view('recycle.solicitudes')->with([
+                'data' => $data,
+            ]); 
+        }
+        
     }
     public function create()
     {
@@ -95,6 +121,7 @@ class Solicitud extends Controller
             $pape->precio_fin = $soli->precio_fin;
             $pape->metodo_p = $soli->metodo_p;
             $pape->estado = $soli->estado;
+            $pape->act = 'I';
             $pape->courier = 'Cancelado por Usuario';
             $pape->save();
             $soli->delete();

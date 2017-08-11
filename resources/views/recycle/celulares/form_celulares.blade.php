@@ -201,16 +201,57 @@
     <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
     <script src="../../../assets/js/demo.js"></script>
       <script>
+        
+        var test = "";
+        var i = 0;
+        var arreglo = [];
+        @foreach($disable as $disa)
+            var disas = "{{$disa}}";
+            if (disas != '') {                
+                test = test + "{{$disa}}";
+                arreglo[i] = "{{$disa}}";
+                i++;
+            }
+        @endforeach
+        @foreach($disablesig as $disasig)
+            var disas = "{{$disasig}}";
+            if (disas != '') {                
+                test = test + "{{$disasig}}";
+                arreglo[i] = "{{$disasig}}";
+                i++;
+            }
+        @endforeach
+        var disabledDays = arreglo;
+        function nationalDays(date) {
+            var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+            //console.log('Checking (raw): ' + m + '-' + d + '-' + y);
+            for (i = 0; i < disabledDays.length; i++) {
+                if($.inArray((m+1) + '-' + d + '-' + y,disabledDays) != -1 || new Date() > date) {
+                    //console.log('bad:  ' + (m+1) + '-' + d + '-' + y + ' / ' + disabledDays[i]);
+                    return [false];
+                }
+            }
+            //console.log('good:  ' + (m+1) + '-' + d + '-' + y);
+            return [true];
+        }
+        function noWeekendsOrHolidays(date) {
+            return nationalDays(date);
+        }
+
 
           $( function() {
                 var max = {{ $max }};
                 var min = {{ $min }};
                 $( "#datepicker" ).datepicker({
-                   maxDate: '+'+max+'d',
+                   maxDate: '+'+max+'m',
                    minDate: '+'+min+'d',
                    dateFormat: 'dd/mm/yy',
+                   constrainInput: true,
+                   beforeShowDay: noWeekendsOrHolidays,
                 });
           });
+
+
           function activar(){
                document.getElementById("datepicker").style.disabled = false;
           }

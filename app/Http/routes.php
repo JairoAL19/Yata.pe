@@ -96,6 +96,9 @@ Route::group(['prefix' => '','middleware' => 'auth'], function() {
 		Route::get('/admin845967/Solicitudes_Editar/{id}', ['uses' => 'Admin@solicitudes_Editar']);
 		Route::post('/admin845967/Solicitudes_Editar/{id}', ['uses' => 'Admin@solicitudes_Editar_post']);		
 
+		Route::get('/admin845967/agregar_turno', ['uses' => 'Admin@agregar_turno']);
+		Route::post('/admin845967/agregar_turno', ['uses' => 'Admin@agregar_turno_post']);	
+
 	});
 });
 Route::get('social/{provider?}', 'SocialController@getSocialAuth');

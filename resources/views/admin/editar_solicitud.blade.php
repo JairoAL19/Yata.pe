@@ -54,7 +54,7 @@
                     <td style="text-align: center;">
                         <select name="act">
                             <option value="A">Activo</option>
-                            <option value="R">Inactivo</option>
+                            <option value="I">Inactivo</option>
                             <option value="T">Terminado</option>
                         </select>
                     </td>                    
@@ -63,8 +63,31 @@
                     <td>{{$solicitudes->fecha_r}}</td>
                     <td>{{$solicitudes->precio_fin}}</td>
                     <td>{{$solicitudes->estado}}</td>
-                    <td><input type="text" name="courier" style="text-align: center" value="{{$solicitudes->courier}}"></td>
                     <td>
+                    @if(is_string($couriers) == false)
+                        <select name="" id="data" onchange="cambiarvalue()">                            
+                                @foreach($couriers as $courier)
+                                    <option value="{{$courier->id}}">{{$courier->nombre}} {{$courier->hora}}</option>
+                                @endforeach
+                        </select>
+                    @else
+                        {{$couriers}}
+                    @endif
+                    </td>
+                    <td>
+                        <script>
+                            function cambiarvalue(element){
+                                    var e = document.getElementById("data");
+                                    var strUser = e.options[e.selectedIndex].value;
+                                    var strUser1 = e.options[e.selectedIndex].text;
+                                    document.getElementById("courier_id").value = strUser;
+                                    document.getElementById("courier").value = strUser1;
+                            }                            
+                        </script>
+                        @if(is_string($couriers) == false)
+                            <input type="hidden" id="courier_id" name="courier_id" value="{{$couriers[1]->id}}" />
+                            <input type="hidden" id="courier" name="courier" value="{{$couriers[1]->nombre}} {{$couriers[1]->hora}}" />
+                        @endif
                         <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                         <input type="submit" name="enviar" value="Enviar" class="button">
                     </td>

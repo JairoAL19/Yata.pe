@@ -11,6 +11,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use App\Models\Solicitud_r;
 use App\Models\Papelera_Solici;
+use Auth;
+use App\Models\Courier;
 class Admin extends Controller
 {
     /**
@@ -82,11 +84,36 @@ class Admin extends Controller
     public function solicitudes_Editar($id){
         $solici = Solicitud_r::find($id);
         $cont = 1;
-        return view('admin/editar_solicitud')->with([
-            'solicitudes' => $solici,
-            'cont' => $cont,
-            'cont' => $cont,
-        ]);
+        $dia= substr($solici->fecha_r, -10,2);
+        $mes= substr($solici->fecha_r, -6,1);
+        $anio= substr($solici->fecha_r, -4);
+        $couriers = Courier::where('dia', $dia.'/'.$mes.'/'.$anio)->where('hora', '!=','00:00:00')->where('dispo', 'd')->get();
+        $cont = count($couriers);
+        if ($cont != 0) {
+                for ($i=1; $i <= $cont; $i++) { 
+                    $data[$i] = new Courier();
+                }
+                $h=1;
+                foreach ($couriers as $courier) {
+                    $user = User::find($courier->cod_user);
+                    $courier->nombre = $user->name;
+                    $data[$h] = $courier;
+                    $h++;
+                }        
+                return view('admin/editar_solicitud')->with([
+                    'solicitudes' => $solici,
+                    'cont' => $cont,
+                    'couriers' => $data,
+                ]);
+        }else{
+                $data = $solici->courier;
+                return view('admin/editar_solicitud')->with([
+                    'solicitudes' => $solici,
+                    'cont' => $cont,
+                    'couriers' => $data,
+                ]);
+        }
+        
     }
     public function solicitudes_Editar_post(Request $request,$id){
         $solici = Solicitud_r::find($id);
@@ -104,13 +131,53 @@ class Admin extends Controller
             $solici->delete();
             $solici_pape->save();
             return redirect('/admin845967/Solicitudes_T');
+        }
+        if($data->act == 'I'){
+            $solici_pape = new Papelera_Solici();
+            $solici_pape->cod_user = $solici->cod_user;
+            $solici_pape->cod_produc = $solici->cod_produc;
+            $solici_pape->fecha_r = $solici->fecha_r;
+            $solici_pape->precio_fin = $solici->precio_fin;
+            $solici_pape->metodo_p = $solici->metodo_p;
+            $solici_pape->estado = $solici->estado;
+            $solici_pape->courier = 'Cancelado por: '.Auth::User()->name;
+            $solici_pape->act = $data->act;
+            $solici->delete();
+            $solici_pape->save();
+            return redirect('/admin845967/Solicitudes_I');
         }else{
             $solici->courier = $data->courier;
             $solici->save();
+            $courier = Courier::find($data->courier_id);
+            $courier->dispo = 'o';
+            $courier->save();
             $cont = 1;
             return redirect('/admin845967/Solicitudes_P');
         }            
     }
+    public function agregar_turno(){
+        $cont = 1;
+        $data = User::where('cat', 'Yatacourier')->get();
+        return view('admin/agregar_turno')->with([
+                    'cont' => $cont,
+                    'couriers' => $data,
+        ]);
+    }
+    public function agregar_turno_post(Request $request){
+        $data = $request;
+        $dia= substr($data->fecha, -10,2);
+        $mes= substr($data->fecha, -6,1);
+        $anio= substr($data->fecha, -4);
+        $d = $dia."/".$mes."/".$anio;
+        $courier_turno = new Courier();
+        $courier_turno->cod_user = $data->cod_user;
+        $courier_turno->dia = $d;
+        $courier_turno->hora = $data->hora;
+        $courier_turno->dispo = $data->dispo;
+        $courier_turno->save();
+        return redirect('/admin845967/agregar_turno');
+    }
+
     public function usuario_activar($id){
         $usu = User::find($id);
         $usu->dispo = 'A';

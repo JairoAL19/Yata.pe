@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Models\Solicitud_r;
-
+use App\Models\Courier;
 class Celular extends Controller
 {
     /**
@@ -86,8 +86,54 @@ class Celular extends Controller
                 $malo = intval($cel[0]->precio_ini*0.35);
                 $defe = intval($cel[0]->precio_ini*0.17);
                 $bloq = intval($cel[0]->precio_ini*0.04);
-                $max  = 5;
-                $min  = 0;
+                $max  = 1;
+                $min  = 0;                
+                $m = date("m");
+                $y = date("Y");
+                $ud = date("d", (mktime(0,0,0,$m+1,1,$y)-1));
+                if ($m != 12) { $ysig = $y; }else{ $ysig = $y+1; }                
+                for ($i=1; $i <= $ud; $i++) { 
+                    $disable[$i]='';
+                }
+                if ($m < 10) {
+                    $mes = substr($m, -1);
+                }else{
+                    $mes = $m;
+                }
+                
+                if ($m == "12") {
+                    $mesig = 1;    
+                }elseif($m != "12"){
+                    if ($m+1 < 10) {
+                        $mesig = substr($m+1, -1);
+                    }else{
+                        $mesig = $m+1;
+                    }
+                }                
+                for ($i=1; $i <= $ud; $i++) { 
+                    if ($i < 10) {
+                        $turno = Courier::where('dia', '0'.$i.'/'.$mes.'/'.$y)->where('hora', '00:00:00')->where('dispo', 'd')->first();
+                    }else{
+                        $turno = Courier::where('dia', $i.'/'.$mes.'/'.$y)->where('hora', '00:00:00')->where('dispo', 'd')->first(); 
+                    }
+                    if (!$turno) {
+                        $disable[$i]=  $mes.'-'.$i.'-'.$y;
+                    }
+                }
+                $uds = date("d", (mktime(0,0,0,$mesig+1,1,$y)-1));
+                for ($i=1; $i <= $uds; $i++) { 
+                    $disablesig[$i]='';
+                }
+                for ($i=1; $i <= $uds; $i++) { 
+                    if ($i < 10) {
+                        $turnosig = Courier::where('dia', '0'.$i.'/'.$mesig.'/'.$ysig)->where('hora', '00:00:00')->where('dispo', 'd')->first();
+                    }else{
+                        $turnosig = Courier::where('dia', $i.'/'.$mesig.'/'.$ysig)->where('hora', '00:00:00')->where('dispo', 'd')->first(); 
+                    }                                       
+                    if (!$turnosig) {
+                        $disablesig[$i]=  $mesig.'-'.$i.'-'.$ysig;
+                    }
+                }
                 return view('recycle.celulares.form_celulares')->with([
                     'celular' => $cel,
                     'perf'    => $perf,
@@ -97,7 +143,9 @@ class Celular extends Controller
                     'defe'    => $defe,
                     'bloq'    => $bloq,
                     'max'     => $max,
-                    'min'     => $min,
+                    'min'     => $min,                    
+                    'disable' => $disable,
+                    'disablesig' =>$disablesig,
                 ]); 
             }
         }
@@ -110,9 +158,54 @@ class Celular extends Controller
                 $malo = intval($cel[0]->precio_ini*0.35);
                 $defe = intval($cel[0]->precio_ini*0.17);
                 $bloq = intval($cel[0]->precio_ini*0.04);
-                $max  = 5;
-                $min  = 0;
-
+                $max  = 1;
+                $min  = 0;                
+                $m = date("m");
+                $y = date("Y");
+                $ud = date("d", (mktime(0,0,0,$m+1,1,$y)-1));
+                if ($m != 12) { $ysig = $y; }else{ $ysig = $y+1; }                
+                for ($i=1; $i <= $ud; $i++) { 
+                    $disable[$i]='';
+                }
+                if ($m < 10) {
+                    $mes = substr($m, -1);
+                }else{
+                    $mes = $m;
+                }
+                
+                if ($m == "12") {
+                    $mesig = 1;    
+                }elseif($m != "12"){
+                    if ($m+1 < 10) {
+                        $mesig = substr($m+1, -1);
+                    }else{
+                        $mesig = $m+1;
+                    }
+                }                
+                for ($i=1; $i <= $ud; $i++) { 
+                    if ($i < 10) {
+                        $turno = Courier::where('dia', '0'.$i.'/'.$mes.'/'.$y)->where('hora', '00:00:00')->where('dispo', 'd')->first();
+                    }else{
+                        $turno = Courier::where('dia', $i.'/'.$mes.'/'.$y)->where('hora', '00:00:00')->where('dispo', 'd')->first(); 
+                    }
+                    if (!$turno) {
+                        $disable[$i]=  $mes.'-'.$i.'-'.$y;
+                    }
+                }
+                $uds = date("d", (mktime(0,0,0,$mesig+1,1,$y)-1));
+                for ($i=1; $i <= $uds; $i++) { 
+                    $disablesig[$i]='';
+                }
+                for ($i=1; $i <= $uds; $i++) { 
+                    if ($i < 10) {
+                        $turnosig = Courier::where('dia', '0'.$i.'/'.$mesig.'/'.$ysig)->where('hora', '00:00:00')->where('dispo', 'd')->first();
+                    }else{
+                        $turnosig = Courier::where('dia', $i.'/'.$mesig.'/'.$ysig)->where('hora', '00:00:00')->where('dispo', 'd')->first(); 
+                    }                                       
+                    if (!$turnosig) {
+                        $disablesig[$i]=  $mesig.'-'.$i.'-'.$ysig;
+                    }
+                }
                 return view('recycle.celulares.form_celulares')->with([
                     'celular' => $cel,
                     'perf'    => $perf,
@@ -123,6 +216,8 @@ class Celular extends Controller
                     'bloq'    => $bloq,
                     'max'     => $max,
                     'min'     => $min,
+                    'disable' => $disable,
+                    'disablesig' =>$disablesig,
                 ]); 
         }
 
@@ -139,6 +234,13 @@ class Celular extends Controller
             $solici->metodo_p = $data->metodo_p;
             $solici->estado = $data->estado;
             $solici->courier = 'Pendiente';
+
+            $dia= substr($data->fecha_r, -10,2);
+            $mes= substr($data->fecha_r, -6,1);
+            $anio= substr($data->fecha_r, -4);
+            $courier = Courier::where('dia', $dia.'/'.$mes.'/'.$anio)->where('hora', '00:00:00')->first();
+            $courier->delete();
+
             $solici->save();
             return redirect()->route('/Aceptado', ['data' =>  $solici->id, 'marca' => $data->marca.'%Modelo'.$data->cod_produc,   ]);      
         }

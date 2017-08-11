@@ -37,7 +37,7 @@
                         -moz-border-radius: 10px 10px 10px 10px;
                         -webkit-border-radius: 10px 10px 10px 10px;
                         border: 8px outset #d4d4d4;       
-                        width: 18%;
+                        width: 17%;
                         background: white;    
                         padding: 1%;      
                         margin-left: 2%;
@@ -60,31 +60,54 @@
 
             </style>
             <div class="CATEGORIAS1" style="margin-top: 2%">
-                @foreach($solicitudes as $solicitud)
+                @foreach($data as $dato)
                 <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    @foreach($celulares as $cel)
-                        @if($solicitud->cod_produc == $cel->nombre)
-                            <img style="width: 100%; " src="../../{{ $cel->foto }}">
-                            <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$cel->nombre}}</label>
-                        @endif
-                    @endforeach
-                    <b><p style="font-size: 14px; width: 100%;text-align: center;">Fecha: {{ $solicitud->fecha_r }}</p></b>
-                    <b><p style="font-size: 14px; width: 100%;text-align: center; color: green">Pago: S/.{{ $solicitud->precio_fin }}</p></b>
-                    <b><p style="font-size: 14px; width: 100%;text-align: center;">Estado: {{ $solicitud->estado }}</p></b>
-                    <b><p style="font-size: 12px; width: 100%;text-align: center;">Metodo Pago: {{ $solicitud->metodo_p }}</p></b>
-                    @if($solicitud->courier == 'Pendiente')
-                        <b><p style="font-size: 12px; width: 100%;text-align: center;">Courier: <b style="color: red">{{ $solicitud->courier }}</b></p></b>
+                    <img style="width: 100%; " src="../../{{ $dato->foto }}">
+                    <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$dato->nombre}}</label>
+                    <b><p style="font-size: 14px; width: 100%;text-align: center;">Fecha: {{ $dato->fecha_r }}</p></b>
+                    <b><p style="font-size: 14px; width: 100%;text-align: center; color: green">Pago: S/.{{ $dato->precio_fin }}</p></b>
+                    <b><p style="font-size: 14px; width: 100%;text-align: center;">Estado: {{ $dato->estado }}</p></b>
+                    <b><p style="font-size: 12px; width: 100%;text-align: center;">Metodo Pago: {{ $dato->metodo_p }}</p></b>
+                    @if($dato->courier == 'Pendiente')
+                        <b><p style="font-size: 12px; width: 100%;text-align: center; font-size: 80%">Courier: <b style="color: red">{{ $dato->courier }}</b></p></b>
                     @else
-                         <b><p style="font-size: 12px; width: 100%;text-align: center;">Courier: <b style="color: green">{{ $solicitud->courier }}</b></p></b>
+                         <b><p style="width: 100%;text-align: center; font-size: 80%">Courier: <b style="color: green">{{ $dato->courier }}</b></p></b>
                     @endif
-                    @if($solicitud->courier == 'Pendiente')
-                        <a onClick="confirmation({{$solicitud->id}})">                    
-                            <button class="btn btn-warning" name="Cancelar" id="confirma" value="{{$solicitud->id}}" style="width: 100%; text-align: center;">Cancelar Solicitud</button>                    
+                    @if($dato->courier == 'Pendiente')
+                        <a onClick="confirmation({{$dato->id}})">                    
+                            <button class="btn btn-warning" name="Cancelar" id="confirma" value="{{$dato->id}}" style="width: 100%; text-align: center;">Cancelar Solicitud</button>                    
                         </a>
+                    @elseif($dato->act == 'T')
+                        <label class="btn-termi" value="Solicitud Aceptada" style="width: 100%; text-align: center; color: #2686ed">Terminado</label>
+                    @elseif($dato->act == 'I')
+                        <label class="btn-cance" value="Solicitud Cancelada" style="width: 100%; text-align: center; color: #f53434">Cancelado</label>
                     @else
-                        <button class="btn btn-success" name="Solicitud Aceptada" id="confirma" value="{{$solicitud->id}}" style="width: 100%; text-align: center;">Solicitud Aceptada</button>
+                        <label class="btn-ace" value="Solicitud Aceptada" style="width: 100%; text-align: center; color: #3ed104">Aceptado</label>                        
                     @endif
+                    <style>
+                        .btn-ace{
+                            border-radius: 124px 124px 124px 124px;
+                            -moz-border-radius: 124px 124px 124px 124px;
+                            -webkit-border-radius: 124px 124px 124px 124px;
+                            border: 2px solid #3ed104;
+                            padding: 7px 18px;
+                        }     
+                        .btn-cance{
+                            border-radius: 124px 124px 124px 124px;
+                            -moz-border-radius: 124px 124px 124px 124px;
+                            -webkit-border-radius: 124px 124px 124px 124px;
+                            border: 2px solid #f53434;
+                            padding: 7px 18px;
+                        }     
+                        .btn-termi{
+                            border-radius: 124px 124px 124px 124px;
+                            -moz-border-radius: 124px 124px 124px 124px;
+                            -webkit-border-radius: 124px 124px 124px 124px;
+                            border: 2px solid #2686ed;
+                            padding: 7px 18px;
+                        }                   
+                    </style>
                     <script>
                         function  confirmation($cod){
                             if(confirm('¿Estas seguro que vas a cancelar esta Solicitud?')){
@@ -97,7 +120,9 @@
                 @endforeach
             </div>
             </br>
-            *Solo se puede cancelar una solicitud de reciclado mientras el courier no haya sido asignado (Estado: Pendiente). Una vez fue asignado si desea cancelar el recojo de su articulo tendrá que llamar al (01)222-2222, indicando el motivo.
+            <p style="margin-bottom: 15px; margin-left: 15px; text-align: justify;">
+                *Solo se puede cancelar una solicitud de reciclado mientras el courier no haya sido asignado (Estado: Pendiente). Una vez fue asignado si desea cancelar el recojo de su articulo tendrá que llamar al (01)222-2222, indicando el motivo.
+            </p>
         </div>
 
 

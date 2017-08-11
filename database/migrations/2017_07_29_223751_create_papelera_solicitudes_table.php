@@ -17,7 +17,7 @@ class CreatePapeleraSolicitudesTable extends Migration
             $table->integer('cod_user')->NotNull;
             $table->string('act',1);
             $table->string('cod_produc');
-            $table->date('fecha_r');
+            $table->string('fecha_r'),25;
             $table->float('precio_fin')->NotNull;
             $table->string('metodo_p');
             $table->string('estado');

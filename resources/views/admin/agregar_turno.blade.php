@@ -6,6 +6,7 @@
 
 @section('main-content')
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
+<link rel="stylesheet" href="/css/jquery-ui.css" />
 <style>
     #myInput {
     background-image: url('/css/searchicon.png'); /* Add a search icon to input */
@@ -93,57 +94,39 @@
                 <a href="/admin845967/agregar_turno"><button style="margin-top: 1%; margin-bottom: 1%; margin-left: 1%; float: right;" type="button" class="btn btn-primary active"><b>Agregar Turno</b></button></a>
                 <a href="/admin845967/agregar_dia"><button style="margin-top: 1%; margin-bottom: 1%; margin-left: 1%; float: right;" type="button" class="btn btn-primary active"><b>Agregar Día</b></button></a>
             </div>
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por producto...">
+            <form action="/admin845967/agregar_turno" method="post">
             <table class="table table-bordered" id="myTable">
                 <tr>
                     <td>N°</td>
-                    <td>Activo</td>
                     <td>Usuario</td>
-                    <td>Producto</td>
-                    <td>Fecha de Recojo</td>
-                    <td>Precio Final</td>
-                    <td>Estado</td>
-                    @if($act == 'I')
-                        <td>Observaciones</td>
-                    @else
-                        <td>Courier</td>
-                    @endif
-                    @if($act != 'T')
-                    @if($act != 'I')
-                        <td>Opciones</td>   
-                    @endif     
-                    @endif             
+                    <td>Disponibilidad</td>
+                    <td>Fecha</td>
+                    <td>Hora</td>
+                    <td>Opciones</td>
                 </tr>
-                @foreach($solicitudes as $solici)
                     <tr>
                         <td>{{ $cont++ }}</td>
-                        @if($act == 'A')
-                            <td style="text-align: center;"><img style="width: 32px;" src="../../img/verde.png"></td>
-                        @elseif($act == 'T')
-                            <td style="text-align: center;"><img style="width: 32px;" src="../../img/complete_1.jpg"></td>
-                        @elseif($act == 'P')
-                            <td style="text-align: center;"><img style="width: 32px;" src="../../img/pendiente.png"></td>
-                        @elseif($act == 'I')
-                            <td style="text-align: center;"><img style="width: 32px;" src="../../img/rojo.png"></td>
-                        @endif
-                        <td>{{ $solici->cod_user}}</td>
-                        <td>{{ $solici->cod_produc}}</td>
-                        <td>{{ $solici->fecha_r}}</td>
-                        <td>{{ $solici->precio_fin}}</td>
-                        <td>{{ $solici->estado}}</td>
-                        <td>{{ $solici->courier}}</td>
-                        @if($act != 'T')
-                        @if($act != 'I')
-                            <td>
-                                <a href="/admin845967/Solicitudes_Editar/{{$solici->id}}"><img style="width: 32px" src="../../img/editar.png"></a>
-                            </td>
-                        @endif  
-                        @endif 
+                        <td>
+                            <select name="cod_user">
+                                @foreach($couriers as $courier)
+                                    <option value="{{$courier->id}}"> {{$courier->name}} </option>                             
+                                @endforeach
+                            </select>
+                        </td>
+                        <td>
+                            <select name="dispo">
+                                <option value="d">Disponible</option>
+                                <option value="o">Ocupado</option>
+                            </select>
+                        </td>
+                        <td><input type="text" id="datepicker" class="form-control border-input" required name="fecha" placeholder="Día/Mes/Año" readonly style="background: #fffcf5"></td>
+                        <td><input type="text" name="hora" required placeholder="00:00:00"></td>
+                        <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+                        <td><input type="submit" class="btn" name="enviar" value="Registrar"></td>
                     </tr>
-                 @endforeach   
                 
             </table>
-
+            </form>
 
         </div>
 
@@ -173,4 +156,14 @@
 
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 	<script src="../../assets/js/demo.js"></script>
+    <script>
+          $( function() {
+                $( "#datepicker" ).datepicker({
+                   maxDate: '+5m',
+                   minDate: '+0d',
+                   dateFormat: 'dd/mm/yy',
+                   constrainInput: true,
+                });
+          });
+      </script>
 
