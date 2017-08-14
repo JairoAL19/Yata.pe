@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('about_me', 500);
             $table->string('cat', 100);
             $table->string('dispo',1);
+            $table->string('avatar',300);
             $table->rememberToken();
             $table->timestamps();
         });

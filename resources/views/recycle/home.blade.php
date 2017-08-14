@@ -20,9 +20,8 @@
                     <a class="navbar-brand" href="Tec" style="color: white">Recicla Ganando Dinero</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
-
-                        Hola, {{ Auth::User()->name }}
+                    <ul class="nav navbar-nav navbar-right" style="margin-top: 1%">
+                        Hola, {{ Auth::User()->name }} <img class="avatar" src="{{ Auth::User()->avatar }}"> 
                     </ul>
 
                 </div>
@@ -116,6 +115,11 @@
                     .ABOUTAS{
                         margin-top: 2%
                     }    
+                }
+                .avatar {
+                    border-radius: 50%;
+                    max-height: 50px;
+                    max-width: 50px;
                 }
             </style>
             <div class="CATEGORIAS" style="margin-top: 2%">

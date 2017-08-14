@@ -23,6 +23,9 @@ class Solicitud extends Controller
         $soli = Solicitud_r::where('cod_user', Auth::user()->id)->orderBy('created_at', 'ASC')->get();
         $soli_reci = Papelera_Solici::where('cod_user', Auth::user()->id)->orderBy('act', 'DES')->get();
         $cont = count($soli);
+        if ($cont == 0) {
+            $cont = count($soli_reci);
+        }
         if ($cont != 0) {
             for ($i=1; $i <= $cont; $i++) { 
             $data[$i] = new Solicitud_r();

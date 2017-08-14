@@ -36,6 +36,7 @@ class SocialController extends Controller
                  $usuario = new User();
                  $usuario->name = $user->name;
                  $usuario->email = $user->email;   
+                 $usuario->avatar =  $user->getAvatar();
                  $usuario->save();
                  auth()->Login($usuario);
                  return redirect('/Reciclar/Tec');

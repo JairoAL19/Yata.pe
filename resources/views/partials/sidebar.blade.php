@@ -80,6 +80,12 @@
                         <p>Testimonios</p>
                     </a>
                 </li>
+                <li>
+                    <a href="maps.html">
+                        <i class="ti-shopping-cart"></i>
+                        <p>Tienda</p>
+                    </a>
+                </li>
                 <div class="stars"></div>                
                 <li>
                 <li class="active-pro">

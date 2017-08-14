@@ -120,7 +120,7 @@
                             </select>
                         </td>
                         <td><input type="text" id="datepicker" class="form-control border-input" required name="fecha" placeholder="Día/Mes/Año" readonly style="background: #fffcf5"></td>
-                        <td><input type="text" name="hora" required placeholder="00:00:00"></td>
+                        <td><input type="text" name="hora" required placeholder="00:00:00" value="00:00:00"></td>
                         <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                         <td><input type="submit" class="btn" name="enviar" value="Registrar"></td>
                     </tr>

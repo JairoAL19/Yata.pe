@@ -20,17 +20,52 @@
                     <a class="navbar-brand" href="Tec" style="color: white">Mi Perfil</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
-
-                        Hola, {{ Auth::User()->name }}
+                    <ul class="nav navbar-nav navbar-right" style="margin-top: 1%">
+                        Hola, {{ Auth::User()->name }} <img class="avatar_top" src="{{ Auth::User()->avatar }}"> 
                     </ul>
 
                 </div>
             </div>
         </nav>
 
+        <style> 
+            input[type="file"] {
+            }
+            .avatar_top {
+                border-radius: 50%;
+                max-height: 50px;
+                max-width: 50px;
+            }
+        </style>
+        <script>
+                $(window).load(function(){
 
+                     $(function() {
+                      $('#upfile').change(function(e) {
+                          addImage(e); 
+                         });
+
+                         function addImage(e){
+                          var file = e.target.files[0],
+                          imageType = /image.*/;
+                        
+                          if (!file.type.match(imageType))
+                           return;
+                      
+                          var reader = new FileReader();
+                          reader.onload = fileOnload;
+                          reader.readAsDataURL(file);
+                         }
+                      
+                         function fileOnload(e) {
+                          var result=e.target.result;
+                          $('#avatar').attr("src",result);
+                         }
+                        });
+                  });
+        </script>
         <div class="content" style="margin-top: 1%">
+            <form action="/Reciclar/Actualizar_P" method="post" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 col-md-5">
@@ -40,7 +75,10 @@
                             </div>
                             <div class="content">
                                 <div class="author">
-                                  <img class="avatar border-white" src="../assets/img/faces/face-2.jpg" alt="..."/>
+                                    <label class="custom-file-upload" >
+                                        <input type="file" id="upfile" name="avatar" />
+                                        <img class="avatar border-white" id="avatar" src="{{Auth::User()->avatar}}" alt="..."/>
+                                    </label>
                                   <h4 class="title">{{ Auth::User()->name }}<br />
                                      <a href="#"><small>@ {{ Auth::User()->email }}</small></a>
                                   </h4>
@@ -56,10 +94,10 @@
                                         <h5 style="color: blue">{{ $solici }}<br /><small>Solicitudes</small></h5>
                                     </div>
                                     <div class="col-md-4">
-                                        <h5 style="color: blue">12<br /><small>Concretado</small></h5>
+                                        <h5 style="color: blue">{{ $concretado }}<br /><small>Concretado</small></h5>
                                     </div>
                                     <div class="col-md-3">
-                                        <h5 style="color: green">S/.24,6<br /><small>Ganado</small></h5>
+                                        <h5 style="color: green">S/. {{ $ganado }}<br /><small>Ganado</small></h5>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +109,6 @@
                                 <h4 class="title">Editar Perfil</h4>
                             </div>
                             <div class="content">
-                                <form action="/Reciclar/Actualizar_P" method="post">
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="form-group">
@@ -82,10 +119,10 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Fecha Nacimiento</label>
-                                                @if(Auth::user()->fecha_naci == '0000-00-00')
-                                                    <input type="text" class="form-control border-input" name="fecha_naci" placeholder="1990/06/17" value="">
+                                                @if(Auth::user()->fecha_naci == '01/01/1999')
+                                                    <input type="text" class="form-control border-input" name="fecha_naci" placeholder="01/01/1999" required value="">
                                                 @else
-                                                    <input type="text" class="form-control border-input" name="fecha_naci" placeholder="1990/06/17" value="{{ Auth::user()->fecha_naci }}">                                                
+                                                    <input type="text" class="form-control border-input" name="fecha_naci" placeholder="01/01/1999" value="{{ Auth::user()->fecha_naci }}">                                                
                                                 @endif
                                             </div>
                                         </div>
@@ -110,7 +147,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Dirección</label>
-                                                <input type="text" class="form-control border-input" name="direc" placeholder="Ejemplo, Av. Las Artes sur 615, San Borja - Lima" value="{{ Auth::user()->direc }}">
+                                                <input type="text" class="form-control border-input" required name="direc" placeholder="Ejemplo, Av. Las Artes sur 615, San Borja - Lima" value="{{ Auth::user()->direc }}">
                                             </div>
                                         </div>
                                     </div>
@@ -119,13 +156,13 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Ciudad</label>
-                                                <input type="text" class="form-control border-input" name="ciudad" placeholder="Ejemplo, Lima" value="{{ Auth::user()->ciudad }}">
+                                                <input type="text" class="form-control border-input" required name="ciudad" placeholder="Ejemplo, Lima" value="{{ Auth::user()->ciudad }}">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>País</label>
-                                                <input type="text" class="form-control border-input" name="pais" placeholder="Ejemplo, Perú" value="{{ Auth::user()->pais }}">
+                                                <input type="text" class="form-control border-input" required name="pais" placeholder="Ejemplo, Perú" value="{{ Auth::user()->pais }}">
                                             </div>
                                         </div>
                                         <div class="col-md-4">

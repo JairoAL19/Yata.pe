@@ -21,9 +21,19 @@ class Perfil extends Controller
     {
         $solici = Solicitud_r::where('cod_user', Auth::User()->id)->get();
         $solici_r = Papelera_Solici::where('cod_user', Auth::User()->id)->get();
-        $cont = count($solici);
-        $cont = $cont + count($solici_r);
-        return view('recycle.perfil')->with('solici', $cont);
+        $concretado = Papelera_Solici::where('cod_user', Auth::User()->id)->where('act', 'T')->get();
+        $solici_c = count($solici);
+        $solici_c = $solici_c + count($solici_r);
+        $concretado_c = count($concretado);
+        $ganado = 0;
+        foreach ($concretado as $prec) {
+            $ganado = $ganado + $prec->precio_fin;
+        }
+        return view('recycle.perfil')->with([
+            'solici' => $solici_c,
+            'concretado' => $concretado_c,
+            'ganado' => $ganado,
+        ]);
     }
     public function actualizar_p(Request $request){
         $data = $request;
@@ -36,6 +46,15 @@ class Perfil extends Controller
         $user->pais = $data->pais;
         $user->zip_code = $data->zip_code;
         $user->about_me = $data->about_me;
+        $nombre = $_FILES['avatar']['name'];
+        $nombrer = strtolower($nombre);
+        $cd=$_FILES['avatar']['tmp_name'];
+        $ruta = "img/perfiles/".$user->email;
+        $destino = "/img/perfiles/".$user->email;
+        $resultado = @move_uploaded_file($_FILES["avatar"]["tmp_name"], $ruta);                        
+        $user->avatar = $destino;
+
+
         $user->save();
         return redirect('Reciclar/Perfil');       
     }

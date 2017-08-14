@@ -20,9 +20,8 @@
                     <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">Solicitudes</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
-
-                        Hola, {{ Auth::User()->name }}
+                    <ul class="nav navbar-nav navbar-right" style="margin-top: 1%">
+                            Hola, {{ Auth::User()->name }} <img class="avatar_top" src="{{ Auth::User()->avatar }}"> 
                     </ul>
 
                 </div>
@@ -57,6 +56,11 @@
                         margin-bottom: 2%;
                     }                    
                 }
+                .avatar_top {
+                    border-radius: 50%;
+                    max-height: 50px;
+                    max-width: 50px;
+                }
 
             </style>
             <div class="CATEGORIAS1" style="margin-top: 2%">
@@ -72,7 +76,11 @@
                     @if($dato->courier == 'Pendiente')
                         <b><p style="font-size: 12px; width: 100%;text-align: center; font-size: 80%">Courier: <b style="color: red">{{ $dato->courier }}</b></p></b>
                     @else
+                        @if($dato->act == 'I')
+                         <b><p style="width: 100%;text-align: center; font-size: 80%">Courier: <b style="color: green">Cancelado</b></p></b>   
+                        @else                            
                          <b><p style="width: 100%;text-align: center; font-size: 80%">Courier: <b style="color: green">{{ $dato->courier }}</b></p></b>
+                        @endif
                     @endif
                     @if($dato->courier == 'Pendiente')
                         <a onClick="confirmation({{$dato->id}})">                    
@@ -121,7 +129,9 @@
             </div>
             </br>
             <p style="margin-bottom: 15px; margin-left: 15px; text-align: justify;">
-                *Solo se puede cancelar una solicitud de reciclado mientras el courier no haya sido asignado (Estado: Pendiente). Una vez fue asignado si desea cancelar el recojo de su articulo tendrá que llamar al (01)222-2222, indicando el motivo.
+                *Solo se puede cancelar una solicitud de reciclado mientras el courier no haya sido asignado (Estado: Pendiente). Una vez fue asignado si desea cancelar el recojo de su articulo tendrá que llamar al (01)222-2222, indicando el motivo.</br></br>
+                *Solo se muestran las solicitudes con un rango máximo de 30 días desde su fecha de registro.</br></br>
+                *Si su pedido fue cancelado sin su concentimiento o autorización por favor comuniquesé con nosotros mediante el chat o el formulario de contacto.
             </p>
         </div>
 
