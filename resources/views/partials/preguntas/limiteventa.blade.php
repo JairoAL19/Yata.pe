@@ -1,0 +1,2 @@
+<h3>¿Hay un límite máximo de dispositivos que puedo vender?</h3>
+<p style="padding: 2%; margin-top: 5%; margin-bottom: 5%">No existe limite de venta de dispositivos electrónicos.</br>El sistema permite el ingreso de un máximo de tres solicitudes por día, pasado ese limite tendrás que esperar al siguiente día para poder enviar más solicitudes </p>

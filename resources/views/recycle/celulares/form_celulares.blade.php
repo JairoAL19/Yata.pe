@@ -136,7 +136,7 @@
                                             </div>
                                         </div>
                                         <p style="margin-left: 2.5%; color: gray; font-size: 12px">*Al "Reciclar" Aceptas los <a href="#">Terminos de Servicio</a> y un asesor se comunicará contigo en las siguientes 24h.</p>
-                                        <p style="margin-left: 2.5%; color: gray; font-size: 12px">*Se pagará según el estado verificar que el <a href="#" onclick="bajar()">estado</a> este correcto.</p>
+                                        <p style="margin-left: 2.5%; color: gray; font-size: 12px">*Se pagará según el estado, verificar que el <a href="#" onclick="bajar()">estado</a> este correcto.</p>
                                         <script>
                                             function bajar(){
                                                 document.getElementById("estados").scrollIntoView();

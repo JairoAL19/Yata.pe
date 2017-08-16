@@ -1,0 +1,2 @@
+<h3>¿Aceptan dispositivos electrónicos robados?</h3>
+<p style="padding: 2%; margin-top: 5%; margin-bottom: 5%">Obviamente no. Si alguien intenta vendernos un dispositivo electrónico que no sea de su propiedad o que no esté autorizado para la venta, nuestro sistema lo detectará inmediatamente (gracias al número de identificación del terminal) y lo denunciaremos. </p>

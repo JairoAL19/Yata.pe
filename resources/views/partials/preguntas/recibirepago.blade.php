@@ -1,0 +1,2 @@
+<h3>¿Cuando recibiré el pago?</h3>
+<p style="padding: 2%; margin-top: 5%; margin-bottom: 5%">El pago se realizará el mismo día del recojo, una vez se termine la verificación del courier.</br> Si el dispositivo se encuentra en las condiciones que indica el formulario llenado, se procederá al pago, Leer los Terminos y Condiciones para más información acerca de pagos.</p>

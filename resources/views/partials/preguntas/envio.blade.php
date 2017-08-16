@@ -1,0 +1,2 @@
+<h3>¿Cómo envío mi dispositivo electrónico a Yata?</h3>
+<p style="padding: 2%; margin-top: 5%; margin-bottom: 5%">En YATA nos preocupamos por la seguridad de nuestros clientes, es por este motivo que nos hacemos cargo del recojo integro del dispositivo electrónico, en su lugar designado. </br></br>Para poder realizar este recojo satisfactoriamente deberá brindar sus datos a travez del formulario en la web</p>

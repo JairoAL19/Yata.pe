@@ -49,12 +49,19 @@ class Perfil extends Controller
         $nombre = $_FILES['avatar']['name'];
         $nombrer = strtolower($nombre);
         $cd=$_FILES['avatar']['tmp_name'];
-        $ruta = "img/perfiles/".$user->email;
-        $destino = "/img/perfiles/".$user->email;
-        $resultado = @move_uploaded_file($_FILES["avatar"]["tmp_name"], $ruta);                        
+        if ($user->avatar != '/img/avatar_default.png') {
+            $user->avatar = '/img/avatar_default.png';
+            $user->save();
+            $ruter = $user->email.$nombrer;
+            $ruta = "img/perfiles/".$ruter;
+            $destino = "/img/perfiles/".$ruter;
+            $resultado = @move_uploaded_file($_FILES["avatar"]["tmp_name"], $ruta);
+        }else{
+            $ruta = "img/perfiles/".$user->email;
+            $destino = "/img/perfiles/".$user->email;
+            $resultado = @move_uploaded_file($_FILES["avatar"]["tmp_name"], $ruta);
+        }                                
         $user->avatar = $destino;
-
-
         $user->save();
         return redirect('Reciclar/Perfil');       
     }

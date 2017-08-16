@@ -65,7 +65,7 @@
                 <li class="active">
                     <a href="/Reciclar/Contacto">
                         <i class="ti-headphone-alt"></i>
-                        <p>Contacto</p>
+                        <p>Ayuda y Contacto</p>
                     </a>
                 </li>
                 <li>

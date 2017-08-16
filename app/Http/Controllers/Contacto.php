@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Solicitud_r;
+use App\Models\Contactos;
+use App\Models\Papelera_Solici;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
+use Auth;
 
 class Contacto extends Controller
 {
@@ -18,7 +22,18 @@ class Contacto extends Controller
     {
         return view('recycle/contacto');
     }
-
+    public function contacto_mensaje(Request $request){
+        $data = $request;
+        $contac = new Contactos();
+        $contac->cod_user = $data->cod_user;
+        $contac->mensaje = $data->mensaje;
+        $contac->estado = 'P';
+        $contac->save();
+        return redirect('/Reciclar/Contacto/MensajeEnviado');
+    }
+    public function contacto_enviado(){
+        return view('recycle/contacto_send');
+    }
     /**
      * Show the form for creating a new resource.
      *

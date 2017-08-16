@@ -31,6 +31,7 @@
 
         <style> 
             input[type="file"] {
+                display: none;
             }
             .avatar_top {
                 border-radius: 50%;

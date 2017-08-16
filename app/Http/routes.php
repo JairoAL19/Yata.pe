@@ -63,10 +63,13 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 
 	//Contacto
 	Route::get('/Contacto', ['uses' => 'Contacto@index', 'as' => '/Contacto']);
+	Route::post('/Contacto_mensaje', ['uses' => 'Contacto@contacto_mensaje', 'as' => '/Contacto_mensaje']);
+	Route::get('/Contacto/MensajeEnviado', ['uses' => 'Contacto@contacto_enviado', 'as' => '/Contacto/MensajeEnviado']);
 	//Contacto End
 
 	
 });
+
 Route::group(['prefix' => '','middleware' => 'auth'], function() {
 	Route::group(['prefix' => '','middleware' => 'admin'], function() {
 

@@ -1,0 +1,2 @@
+<h3>¿Cómo puedo saber la marca y modelo?</h3>
+<p style="padding: 2%; margin-top: 5%; margin-bottom: 5%">La marca y a menudo el modelo suelen aparecer en la tapa del dispositivo electrónico. Si no es el caso, extrae la batería del dispositivo y busca en la pegatina que se encuentra debajo.</br></br> También tienes la posibilidad de buscar la marca y el modelo en nuestra página web mediante el número IMEI o en los documentos de compra.</p>

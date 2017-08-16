@@ -1,0 +1,2 @@
+<h3>¿Qué pasa si la batería está descargada?</h3>
+<p style="padding: 2%; margin-top: 5%; margin-bottom: 5%">Si no puedes comprobar si tu dispositivo electrónico se enciende porque no tienes cargador, nosotros lo haremos en la planta de procesado y te enviaremos un correo indicándote su estado.</br></br>De todas maneras, por favor asegúrate de que tu dispositivo electrónico cumple los criterios que se incluyen en las Condiciones Generales. Recuerda entregarnos la batería junto al dispositivo electrónico. </p>

@@ -1,5 +1,4 @@
-<footer class="footer">
-            <div class="container-fluid">
+<div class="footer" style="border: none">
                 <nav class="pull-left">
                     <ul>
 
@@ -28,4 +27,4 @@
                 <div class="copyright pull-right">
                     &copy; 2017, made <i class="fa fa-pagelines heart"></i> by <a href="http://www.yata.pe">Yata.pe</a>
                 </div>
-</footer>
+</div>
