@@ -2,6 +2,7 @@
 
 @section('htmlheader_title')
     Home
+    header("Cache-Control: no-cache, must-revalidate");
 @endsection
 
 @section('main-content')

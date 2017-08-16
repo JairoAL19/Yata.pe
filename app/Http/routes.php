@@ -61,6 +61,10 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	Route::get('/Aceptado/{data}', ['uses' => 'Reciclar\Celular@index_aceptado', 'as' => '/Aceptado']);
 	//Despues de enviar solicitud End
 
+	//Contacto
+	Route::get('/Contacto', ['uses' => 'Contacto@index', 'as' => '/Contacto']);
+	//Contacto End
+
 	
 });
 Route::group(['prefix' => '','middleware' => 'auth'], function() {

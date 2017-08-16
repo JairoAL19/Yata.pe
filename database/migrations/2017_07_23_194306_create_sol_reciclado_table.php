@@ -23,7 +23,8 @@ class CreateSolRecicladoTable extends Migration
             $table->string('obs');
             $table->string('courier', 250);
             $table->timestamps();
-        });    }
+        });    
+    }
 
     /**
      * Reverse the migrations.

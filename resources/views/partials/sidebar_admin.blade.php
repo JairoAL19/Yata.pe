@@ -64,7 +64,7 @@
                 </li>
                 <li>
                     <a href="https://dashboard.zopim.com/?lang=es#home" target="_blank">
-                        <i class="ti-text"></i>
+                        <i class="ti-headphone-alt"></i>
                         <p>Contacto</p>
                     </a>
                 </li>

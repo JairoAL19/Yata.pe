@@ -20,11 +20,9 @@
                     <a class="navbar-brand" href="Tec" style="color: white">¿Qué voy a reciclar?</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
-
-                        Hola, {{ Auth::User()->name }}
+                    <ul class="nav navbar-nav navbar-right" style="margin-top: 1%">
+                        Hola, {{ Auth::User()->name }} <img class="avatar" src="{{ Auth::User()->avatar }}"> 
                     </ul>
-
                 </div>
             </div>
         </nav>
@@ -45,6 +43,11 @@
                         font-size: 90%;
                         width: 90%;
                     }
+                }
+                .avatar {
+                    border-radius: 50%;
+                    max-height: 50px;
+                    max-width: 50px;
                 }
             </style>
         <link href="/css/freelancer.css" rel="stylesheet">

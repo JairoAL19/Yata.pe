@@ -32,8 +32,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
-                        <i class="ti-text"></i>
+                    <a href="/Reciclar/Contacto">
+                        <i class="ti-headphone-alt"></i>
                         <p>Contacto</p>
                     </a>
                 </li>
@@ -50,13 +50,11 @@
                     </a>
                 </li>
                 <li>
-                <li class="active-pro">
-                    <a href="/auth/logout">
-                        <i class="ti-power-off"></i>
-                        <p>CERRAR SESIÓN</p>
+                    <a href="maps.html">
+                        <i class="ti-shopping-cart"></i>
+                        <p>Tienda</p>
                     </a>
                 </li>
-                <li>
                 <li class="active-pro">
                     <a href="/auth/logout">
                         <i class="ti-power-off"></i>

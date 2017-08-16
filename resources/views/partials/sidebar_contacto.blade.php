@@ -44,13 +44,13 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li >
                     <a href="/Reciclar/Tec">
                         <i class="ti-reload"></i>
                         <p>Reciclar</p>
                     </a>
                 </li>
-                <li >
+                <li>
                     <a href="/Reciclar/Perfil">
                         <i class="ti-user"></i>
                         <p>Mi Perfil</p>
@@ -62,7 +62,7 @@
                         <p>Solicitudes</p>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="/Reciclar/Contacto">
                         <i class="ti-headphone-alt"></i>
                         <p>Contacto</p>
@@ -86,8 +86,7 @@
                         <p>Tienda</p>
                     </a>
                 </li>
-                <div class="stars"></div>                
-                <li>
+                <div class="stars"></div>  
                 <li class="active-pro">
                     <a href="/auth/logout">
                         <i class="ti-power-off"></i>
