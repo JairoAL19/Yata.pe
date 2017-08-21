@@ -57,11 +57,11 @@
 					</form>
 
 					<ul class="icons"" >
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+						<li><a href="http://facebook.com/Yata.pe" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble" target="_blank"><span class="label">Dribbble</span></a></li>
 					</ul>
 				</div>
 				<div id="text" class="container 75%" style=" width: 63%; display: none">

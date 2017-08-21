@@ -72,6 +72,9 @@
                             <li class="divider"></li>
                             <option>IPAD</option>
                             <option>SAMSUNG_T</option>
+                            <li class="divider"></li>
+                            <option>IPOD_NANO</option>
+                            <option>IPOD_TOUCH</option>
                         </select>
                     </td>
                     <td><input type="file" name="foto" style="width: 100%"></td>

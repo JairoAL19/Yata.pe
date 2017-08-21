@@ -141,7 +141,7 @@
                 </div>
                 <div id="celular" class="boton" style="display: inline-block">                
                     <div id="celub2" style="">   
-                    <a href="Celulares">             
+                    <a href="Reproductores">             
                     <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/ipod.jpg">
                     <label style="font-size: 120%">REPRODUCTORES</label>
                     </a>
@@ -155,16 +155,16 @@
                         <p style="display: inline-block;">Sobre nosotros</p>
                     </div>
                     <div id="infotext" style=" text-align: justify;">   
-                        Yata.pe es el servicio de reCommerce más fácil, rápido y ecológico para ayudarle a reciclar sus productos electrónicos usados. Ya sea que quieras reciclar tu iPhone, iPad, Samsung u otros productos electrónicos, Yata.pe te ayuda.
+                        YATA es el servicio de reCommerce más fácil, rápido y ecológico para ayudarle a reciclar sus productos electrónicos usados. Ya sea que quieras reciclar tu iPhone, iPad, Samsung u otros productos electrónicos, YATA te ayuda.
                     </div>
                 </div>
                 <div id="info" class="boton" style="display: inline-block; margin-left: 3%; float: left;">            
                     <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
                     <img style="display: inline-block;" src="../../img/reciclar.png">
-                    <p style="display: inline-block; font-size: 90%">¿Qué puedo reciclar?</p>
+                    <p style="display: inline-block; font-size: 95%">¿Qué puedo reciclar?</p>
                     </div>
                     <div id="infotext" style="text-align: justify;">   
-                        Usted puede reciclar Celulares, Ipod, Tablets, reproductores, entre otros productos que ya no use, Yata.pe se encarga de repararlo y darlo a otro usuario a un precio muy accesible. Recicla tu articulo hoy.
+                        Usted puede reciclar Celulares, Ipod, Tablets, reproductores, entre otros productos que ya no use, YATA se encarga de repararlo y darlo a otro usuario a un precio muy accesible. Recicla tu articulo hoy.
                     </div>
                 </div>
                 <div id="info" class="boton" style=" border: 0px solid black; display: inline-block; margin-left: 3%; float: left;">                
@@ -173,7 +173,7 @@
                     <p style="display: inline-block;">¿Cómo funciona?</p>
                     </div>
                     <div id="infotext" style="text-align: justify;">   
-                        Llegamos a su ubicación, Su teléfono móvil u otro aparato electrónico usado ​​se inspeccionan para asegurarse de que su estado coincide con su evaluación. El pago se reliza al momento de dar la conformidad por nuestro courier.
+                        Llegamos a su ubicación, Su teléfono móvil u otro aparato electrónico usado ​​se inspecciona para asegurarse de que su estado coincida con su evaluación. El pago se reliza al momento de dar la conformidad por nuestro courier.
                     </div>
                 </div>
                 <div id="info" class="boton" style=" border: 0px solid black;display: inline-block; margin-left: 3%; float: left;">                

@@ -30,6 +30,9 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	Route::get('/iPads&Tablets', function () {
     	return view('recycle.ipads_y_tablets.tabletas');
 	});
+	Route::get('/Reproductores', function () {
+    	return view('recycle.reproductores.reproductores');
+	});
 	//Lista Marcas
 	Route::get('/Iphone/P', 'Reciclar\Celular@Iphone_P');	
 	Route::get('/Samsung/P', 'Reciclar\Celular@Samsung_P');
@@ -44,12 +47,15 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 
 	Route::get('/iPad/P', 'Reciclar\iyt@iPad_P');
 	Route::get('/Samsung_T/P', 'Reciclar\iyt@Samsung_P');
+
+	Route::get('/iPod_Nano/P', 'Reciclar\Reproductores@iPod_Nano');
+	Route::get('/iPod_Touch/P', 'Reciclar\Reproductores@iPod_Touch');
 	//Lista Marcas End
 
-	//Formulario de reclamos
+	//Formulario de productos
 	Route::get('/P/{cod_produc}', 'Reciclar\Celular@P_Form');
 	Route::get('/P/{cod_produc}/{memoria}', 'Reciclar\Celular@P_Form_Sub');
-	//Formulario de reclamos End
+	//Formulario de productos End
 
 	//Guardado de solicitud reclamos
 	Route::post('/Solici', 'Reciclar\Celular@solicitud');
@@ -84,6 +90,10 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	//SobreNosotros
 	Route::get('/SobreNosotros', ['uses' => 'Tienda@aboutass', 'as' => '/SobreNosotros']);
 	//EndSobreNosotros
+
+	//Testimonios
+	Route::get('/Testimonios', ['uses' => 'Testimonios@index', 'as' => '/Testimonios']);
+	//EndTestimonios
 
 	
 });

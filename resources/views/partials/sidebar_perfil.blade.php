@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="/Reciclar/Testimonios">
                         <i class="ti-medall"></i>
                         <p>Testimonios</p>
                     </a>

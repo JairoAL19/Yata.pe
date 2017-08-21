@@ -56,11 +56,12 @@
                 <div class="col-lg-12 text-center">
                     <h2>Felicidades</h2>
                     <hr class="star-primary">                    
-                    <p id="text" style="display: inline-block;">Tu solicitud fue registrada satisfactoriamente. Puedes ver tus solicitud en la opción "Solicitudes". Un courier se acercará el día {{ $data->fecha_r }} a recoger el {{ $data->cod_produc }}, comproborá que la condición del producto sea {{ $data->estado }}. El pago de S/.{{ $data->precio_fin}} se realizará despues de la verificación, Gracias por usar Yata.pe y ayudar a un mundo mejor.</p></br>
+                    <p id="text" style="display: inline-block;">Tu solicitud fue registrada satisfactoriamente. Puedes ver tus solicitud en la opción "Solicitudes". Un asesor YATA se comunicará contigo en las siguientes 24h para determinar la hora exacta del recojo de tu <b>{{ $data->cod_produc }}</b>, luego un courier se acercará el día <b>{{ $data->fecha_r }}</b>, comproborá que la condición del producto sea <b>{{ $data->estado }}</b>. El pago de <b>S/.{{ $data->precio_fin}}</b> se realizará despues de la verificación, Gracias por usar Yata.pe y ayudar a un mundo mejor.</p></br>
                     <p>Cliente: <b style="color: green">{{ $usuario }} </b></p>
                     <p>Fecha: <b style="color: green">{{ $data->created_at }} </b></p>
                     <p>Servicio: <b style="color: green">Web Recycle</b></p></br>
-                    <img style="width: 30%; " src="/img/courier.jpg">
+                    <img style="width: 30%; " src="/img/courier.jpg"></br></br>
+                    <a href="/Reciclar/Tec"><button class="btn btn-success active">Seguir Reciclando</button></a>
                 </div>
             </div>
         </div>

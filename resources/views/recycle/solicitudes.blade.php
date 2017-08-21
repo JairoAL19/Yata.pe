@@ -47,7 +47,7 @@
                     }#preci{
                         font-size: 30px;
                     }#imgreci{
-                        width: 70%; margin-left: 15%
+                        width: 60%; margin-left: 20%
                     }
                 }
                 @media screen and (max-width: 1280px) {

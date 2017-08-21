@@ -60,8 +60,8 @@
 					<section class="feature left">
 						<a class="image icon fa-mobile"><img src="/images/pic03.jpg" alt="" /></a>
 						<div class="content">
-							<h3>The Third Thing</h3>
-							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
+							<h3>Su información segura</h3>
+							<p style="text-align: justify;">YATA utiliza un software de programación y seguridad de última generación. Tus datos estarán a salvo en la página web de YATA, nuestra página es completamente segura.</p>
 						</div>
 					</section>
 				</div>

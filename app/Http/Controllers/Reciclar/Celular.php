@@ -81,6 +81,12 @@ class Celular extends Controller
             }elseif($cel[0]->marca == 'IPAD'){
                 $ipads = Celus::where('marca', 'IPAD')->Where('cod_produc', $cod_produc)->where('dispo', 'A')->where('memoria','>','0')->orderBy('memoria','ASC')->get();
                 return view('recycle.ipads_y_tablets.ipad_memoria')->with('ipads', $ipads); 
+            }elseif($cel[0]->marca == 'IPOD_NANO'){
+                $ipods = Celus::where('marca', 'IPOD_NANO')->Where('cod_produc', $cod_produc)->where('dispo', 'A')->where('memoria','>','0')->orderBy('memoria','ASC')->get();
+                return view('recycle.reproductores.ipod_memoria')->with('ipods', $ipods); 
+            }elseif($cel[0]->marca == 'IPOD_TOUCH'){
+                $ipods = Celus::where('marca', 'IPOD_TOUCH')->Where('cod_produc', $cod_produc)->where('dispo', 'A')->where('memoria','>','0')->orderBy('memoria','ASC')->get();
+                return view('recycle.reproductores.ipod_memoria')->with('ipods', $ipods); 
             }else{               
                 $cel = Celus::where('cod_produc', $cod_produc)->where('precio_ini', '!=', '0')->get();
                 $perf = intval($cel[0]->precio_ini);

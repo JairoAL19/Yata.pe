@@ -1,2 +1,2 @@
 <h3>¿Es seguro enviar mis datos por Internet?</h3>
-<p style="padding: 2%; margin-top: 5%; margin-bottom: 5%">YATA utiliza un software de programación y seguridad de última generación. Tus datos estarán a salvo y la página web de YATA es completamente segura.</p>
+<p style="padding: 2%; margin-top: 5%; margin-bottom: 5%">YATA utiliza un software de programación y seguridad de última generación. Tus datos estarán a salvo en la página web de YATA, nuestra página es completamente segura.</p>
