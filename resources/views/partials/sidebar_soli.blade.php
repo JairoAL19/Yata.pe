@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="/Reciclar/Tienda">
                         <i class="ti-shopping-cart"></i>
                         <p>Tienda</p>
                     </a>

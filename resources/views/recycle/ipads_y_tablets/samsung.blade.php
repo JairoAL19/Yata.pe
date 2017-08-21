@@ -21,7 +21,7 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 1%">
-                        {{ Auth::User()->name }} <img class="avatar" src="{{ Auth::User()->avatar }}">
+                        {{ Auth::User()->name }} <img class="avatar" src="{{ Auth::User()->avatar }}"> 
                     </ul>
 
                 </div>
@@ -63,21 +63,22 @@
                         margin-left: 2%;
                         margin-bottom: 2%;
                     }                    
-                }  
+                }
                 .avatar {
                     border-radius: 50%;
                     max-height: 50px;
                     max-width: 50px;
                 }
+
             </style>
             <div class="CATEGORIAS1" style="margin-top: 2%">
-                @foreach($celular as $cel)
+                @foreach($tablets as $tablet)
                 <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="/Reciclar/P/{{ $cel->cod_produc }}">
-                    <img style="width: 100%; " src="../../{{ $cel->foto }}">
-                    <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$cel->nombre}}</label>
-                    <label style="font-size: 80%; margin-top: 2%; text-align: center; width: 100%; color: green">S/. {{$cel->precio_ini}}</label>
+                    <a href="/Reciclar/P/{{ $tablet->cod_produc }}">
+                    <img style="width: 100%; " src="/{{ $tablet->foto }}">
+                    <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$tablet->nombre}}</label>
+                    <label style="font-size: 80%; margin-top: 2%; text-align: center; width: 100%; color: green">S/. {{$tablet->precio_ini}}</label>
                     </a>
                     </div>
                 </div>
@@ -112,3 +113,4 @@
 
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 	<script src="../../assets/js/demo.js"></script>
+

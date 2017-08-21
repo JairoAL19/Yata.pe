@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/logo', function () {
+    return view('logo');
+});
+
 
 Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	
@@ -22,6 +26,9 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	Route::get('/Perfil', ['uses' => 'Auth\Perfil@index', 'as' => '/Perfil']);
 	Route::get('/Celulares', function () {
     	return view('recycle.celulares.celulares');
+	});
+	Route::get('/iPads&Tablets', function () {
+    	return view('recycle.ipads_y_tablets.tabletas');
 	});
 	//Lista Marcas
 	Route::get('/Iphone/P', 'Reciclar\Celular@Iphone_P');	
@@ -34,6 +41,9 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	Route::get('/Azumi/P', 'Reciclar\Celular@Azumi_P');
 	Route::get('/Nokia/P', 'Reciclar\Celular@Nokia_P');
 	Route::get('/BlackBerry/P', 'Reciclar\Celular@Blackberry_P');
+
+	Route::get('/iPad/P', 'Reciclar\iyt@iPad_P');
+	Route::get('/Samsung_T/P', 'Reciclar\iyt@Samsung_P');
 	//Lista Marcas End
 
 	//Formulario de reclamos
@@ -66,6 +76,10 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	Route::post('/Contacto_mensaje', ['uses' => 'Contacto@contacto_mensaje', 'as' => '/Contacto_mensaje']);
 	Route::get('/Contacto/MensajeEnviado', ['uses' => 'Contacto@contacto_enviado', 'as' => '/Contacto/MensajeEnviado']);
 	//Contacto End
+
+	//Tienda
+	Route::get('/Tienda', ['uses' => 'Tienda@index', 'as' => '/Tienda']);
+	//EndTienda
 
 	
 });

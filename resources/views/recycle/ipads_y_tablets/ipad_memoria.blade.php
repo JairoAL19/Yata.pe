@@ -17,7 +17,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">¿Qué voy a reciclar?</a>
+                    <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">Seleccione Modelo</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 1%">
@@ -63,7 +63,7 @@
                         margin-left: 2%;
                         margin-bottom: 2%;
                     }                    
-                }  
+                }
                 .avatar {
                     border-radius: 50%;
                     max-height: 50px;
@@ -71,13 +71,13 @@
                 }
             </style>
             <div class="CATEGORIAS1" style="margin-top: 2%">
-                @foreach($celular as $cel)
+                @foreach($ipads as $ipad)
                 <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="/Reciclar/P/{{ $cel->cod_produc }}">
-                    <img style="width: 100%; " src="../../{{ $cel->foto }}">
-                    <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$cel->nombre}}</label>
-                    <label style="font-size: 80%; margin-top: 2%; text-align: center; width: 100%; color: green">S/. {{$cel->precio_ini}}</label>
+                    <a href="/Reciclar/P/{{ $ipad->cod_produc }}/{{ $ipad->memoria }}">
+                    <img style="width: 100%; " src="../../{{ $ipad->foto }}">
+                    <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$ipad->nombre}}</label>
+                    <label style="font-size: 80%; margin-top: 2%; text-align: center; width: 100%; color: green">S/. {{$ipad->precio_ini}}</label>
                     </a>
                     </div>
                 </div>

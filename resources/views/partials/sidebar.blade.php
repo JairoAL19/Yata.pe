@@ -10,8 +10,19 @@
                 .stars{
                     background-image: url(../../../img/indice2.png); 
                     width: 80%; 
-                    height: 12%; 
+                    height: 13%; 
                     margin-left: 9%;
+                }
+            }
+            @media screen and (max-width: 1480px) {
+                .stars{
+                    background-image: url(../../../img/indice2.png); 
+                    width: 80%; 
+                    height: 13%; 
+                    margin-left: 9%;
+                }
+                #aa{
+                    margin: 6px 0px;
                 }
             }
             @media screen and (max-width: 1280px) {
@@ -38,50 +49,50 @@
         </style>
         <div class="sidebar-wrapper">
             <div class="logo" style="width: 100%; margin-left: 0;  background: #4492E0;  color: white;  border-right: 2px solid;">
-                <a href="/Reciclar/Tec" class="simple-text" style="color: white">
+                <a href="/Reciclar/Tec" class="simple-text" style="color: white" >
                     <b style="color: white">Yata</b>.pe
                 </a>
             </div>
 
             <ul class="nav">
                 <li class="active">
-                    <a href="/Reciclar/Tec">
+                    <a href="/Reciclar/Tec" id="aa">
                         <i class="ti-reload"></i>
                         <p>Reciclar</p>
                     </a>
                 </li>
                 <li >
-                    <a href="/Reciclar/Perfil">
+                    <a href="/Reciclar/Perfil" id="aa">
                         <i class="ti-user"></i>
                         <p>Mi Perfil</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/Reciclar/Solicitudes">
+                    <a href="/Reciclar/Solicitudes" id="aa">
                         <i class="ti-view-list-alt"></i>
                         <p>Solicitudes</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/Reciclar/Contacto">
+                    <a href="/Reciclar/Contacto" id="aa">
                         <i class="ti-headphone-alt"></i>
                         <p>Ayuda y Contacto</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="maps.html" id="aa">
                         <i class="ti-map"></i>
                         <p>Sobre Nosotros</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="maps.html" id="aa">
                         <i class="ti-medall"></i>
                         <p>Testimonios</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="/Reciclar/Tienda" id="aa">
                         <i class="ti-shopping-cart"></i>
                         <p>Tienda</p>
                     </a>
@@ -89,7 +100,7 @@
                 <div class="stars"></div>                
                 <li>
                 <li class="active-pro">
-                    <a href="/auth/logout">
+                    <a href="/auth/logout" >
                         <i class="ti-power-off"></i>
                         <p>CERRAR SESIÓN</p>
                     </a>

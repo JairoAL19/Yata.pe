@@ -69,6 +69,9 @@
                             <option>AZUMI</option>
                             <option>ZTE</option>
                             <option>NOKIA</option>
+                            <li class="divider"></li>
+                            <option>IPAD</option>
+                            <option>SAMSUNG_T</option>
                         </select>
                     </td>
                     <td><input type="file" name="foto" style="width: 100%"></td>

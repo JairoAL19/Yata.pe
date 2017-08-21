@@ -14,6 +14,17 @@
                     margin-left: 9%;
                 }
             }
+            @media screen and (max-width: 1480px) {
+                .stars{
+                    background-image: url(../../../img/indice2.png); 
+                    width: 80%; 
+                    height: 13%; 
+                    margin-left: 9%;
+                }
+                #aa{
+                    margin: 6px 0px;
+                }
+            }
             @media screen and (max-width: 1280px) {
                 .stars{
                     background-image: url(../../../img/indice2.png); 
@@ -45,43 +56,43 @@
 
             <ul class="nav">
                 <li >
-                    <a href="/Reciclar/Tec">
+                    <a href="/Reciclar/Tec" id="aa">
                         <i class="ti-reload"></i>
                         <p>Reciclar</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/Reciclar/Perfil">
+                    <a href="/Reciclar/Perfil" id="aa">
                         <i class="ti-user"></i>
                         <p>Mi Perfil</p>
                     </a>
                 </li>
                 <li>
-                    <a href="/Reciclar/Solicitudes">
+                    <a href="/Reciclar/Solicitudes" id="aa">
                         <i class="ti-view-list-alt"></i>
                         <p>Solicitudes</p>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="/Reciclar/Contacto">
+                    <a href="/Reciclar/Contacto" id="aa">
                         <i class="ti-headphone-alt"></i>
                         <p>Ayuda y Contacto</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="maps.html" id="aa">
                         <i class="ti-map"></i>
                         <p>Sobre Nosotros</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="maps.html" id="aa">
                         <i class="ti-medall"></i>
                         <p>Testimonios</p>
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="/Reciclar/Tienda" id="aa">
                         <i class="ti-shopping-cart"></i>
                         <p>Tienda</p>
                     </a>

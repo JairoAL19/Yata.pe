@@ -22,13 +22,20 @@
                     <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">Estado del Articulo</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
-                        Hola, {{ Auth::User()->name }}
+                    <ul class="nav navbar-nav navbar-right" style="margin-top: 1%">
+                        {{ Auth::User()->name }} <img class="avatar" src="{{ Auth::User()->avatar }}"> 
                     </ul>
 
                 </div>
             </div>
         </nav>
+        <style>
+            .avatar {
+                    border-radius: 50%;
+                    max-height: 50px;
+                    max-width: 50px;
+                }
+        </style>
         <link href="/css/progressbar.css" rel="stylesheet"/>
         <ul id="progressbar" style="text-align: center; margin-top: 2%">
             <li class="active" style="color: black; ">Selecciona</li>

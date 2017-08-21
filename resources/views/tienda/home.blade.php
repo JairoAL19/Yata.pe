@@ -1,4 +1,4 @@
-@extends('app')
+@extends('app_tienda')
 
 @section('htmlheader_title')
     Home
@@ -17,7 +17,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="Tec" style="color: white">Recicla Ganando Dinero</a>
+                    <a class="navbar-brand" href="Tec" style="color: white">Web Shop</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 1%">
@@ -27,13 +27,6 @@
                 </div>
             </div>
         </nav>
-
-        <ul id="progressbar" style="text-align: center; margin-top: 2%">
-            <li class="active" style="color: black; ">Selecciona</li>
-            <li style="color: black; ">Marca</li>
-            <li style="color: black; ">Modelo</li>
-            <li style="color: black; ">Estado</li>
-        </ul>
 
         <div class="content" id="bg" >
 
@@ -62,6 +55,9 @@
                     .ABOUTAS{
                         margin-top: 8%
                     }  
+                    .constr{
+                        margin-left: 15%;
+                    }
                 }
                 @media screen and (max-width: 1280px) {
                     #celular{
@@ -88,6 +84,9 @@
                     .ABOUTAS{
                         margin-top: 2%
                     }  
+                    .constr{
+                        margin-left: 15%;
+                    }
 
                 }
                 @media screen and (max-width: 768px) {
@@ -114,7 +113,12 @@
                     }
                     .ABOUTAS{
                         margin-top: 2%
-                    }    
+                    } 
+                    .constr{
+                        margin-top: 5%;
+                        margin-left: 0px;
+                        width: 100%;
+                    }   
                 }
                 .avatar {
                     border-radius: 50%;
@@ -122,70 +126,10 @@
                     max-width: 50px;
                 }
             </style>
-            <div class="CATEGORIAS" style="margin-top: 2%">
-                <div id="celular" class="boton" style="display: inline-block">                
-                    <div id="celub2" style="">   
-                    <a href="Celulares">             
-                    <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/celulares.png">
-                    <label style="font-size: 120%">CELULARES</label>
-                    </a>
-                    </div>
-                </div>
-                <div id="celular" class="boton" style="display: inline-block">                
-                    <div id="celub2" style="">   
-                    <a href="iPads&Tablets">             
-                    <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/tablet.jpg">
-                    <label style="font-size: 120%">IPAD Y TABLET</label>
-                    </a>
-                    </div>
-                </div>
-                <div id="celular" class="boton" style="display: inline-block">                
-                    <div id="celub2" style="">   
-                    <a href="Celulares">             
-                    <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/ipod.jpg">
-                    <label style="font-size: 120%">REPRODUCTORES</label>
-                    </a>
-                    </div>
-                </div>
+            <div style="margin-top: 2%" >
+                <img class="constr" src="/img/construccion.jpg">
             </div>
-            <div class="ABOUTAS">
-                <div id="info" class="boton" style="display: inline-block; margin-left: 2%; float: left;" >           
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                        <img style="display: inline-block;" src="../../img/icon.png">
-                        <p style="display: inline-block;">Sobre nosotros</p>
-                    </div>
-                    <div id="infotext" style=" text-align: justify;">   
-                        Yata.pe es el servicio de reCommerce más fácil, rápido y ecológico para ayudarle a reciclar sus productos electrónicos usados. Ya sea que quieras reciclar tu iPhone, iPad, Samsung u otros productos electrónicos, Yata.pe te ayuda.
-                    </div>
-                </div>
-                <div id="info" class="boton" style="display: inline-block; margin-left: 3%; float: left;">            
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                    <img style="display: inline-block;" src="../../img/reciclar.png">
-                    <p style="display: inline-block; font-size: 90%">¿Qué puedo reciclar?</p>
-                    </div>
-                    <div id="infotext" style="text-align: justify;">   
-                        Usted puede reciclar Celulares, Ipod, Tablets, reproductores, entre otros productos que ya no use, Yata.pe se encarga de repararlo y darlo a otro usuario a un precio muy accesible. Recicla tu articulo hoy.
-                    </div>
-                </div>
-                <div id="info" class="boton" style=" border: 0px solid black; display: inline-block; margin-left: 3%; float: left;">                
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                    <img style="display: inline-block;" src="../../img/sun.png">
-                    <p style="display: inline-block;">¿Cómo funciona?</p>
-                    </div>
-                    <div id="infotext" style="text-align: justify;">   
-                        Llegamos a su ubicación, Su teléfono móvil u otro aparato electrónico usado ​​se inspeccionan para asegurarse de que su estado coincide con su evaluación. El pago se reliza al momento de dar la conformidad por nuestro courier.
-                    </div>
-                </div>
-                <div id="info" class="boton" style=" border: 0px solid black;display: inline-block; margin-left: 3%; float: left;">                
-                    <div style="border-bottom: 1px solid gray; padding-bottom: 10px">   
-                    <img style="display: inline-block;" src="../../img/motorcycle.png">
-                    <p style="display: inline-block;">Rapido y Seguro</p>
-                    </div>
-                    <div id="infotext" style="text-align: justify;">   
-                        Eliminamos todos los datos de cada artículo que recibimos para garantizar su completa privacidad y tranquilidad. Hacemos la experiencia segura informando cada paso que realizamos en nuestra AppWeb, trabajamos para usted.
-                    </div>
-                </div>
-            </div>
+            
 
         </div>
 

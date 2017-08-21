@@ -19,7 +19,7 @@
                         <p>Reciclar</p>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="/Reciclar/Perfil">
                         <i class="ti-user"></i>
                         <p>Mi Perfil</p>
@@ -49,7 +49,7 @@
                         <p>Testimonios</p>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="/Reciclar/Tienda">
                         <i class="ti-shopping-cart"></i>
                         <p>Tienda</p>

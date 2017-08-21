@@ -5,7 +5,7 @@
 @endsection
 
 @section('main-content')
-
+<link href="/css/progressbar.css" rel="stylesheet"/>
 <!-- <link rel="stylesheet" href="../assets/css/reciclar.css" /> -->
     <div class="main-panel" >
         <nav class="navbar navbar-default" style="background: #4492E0; color: white">
@@ -17,21 +17,20 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">¿Qué voy a reciclar?</a>
+                    <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">Selecciona Marca</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right" style="margin-top: 1%">
-                        {{ Auth::User()->name }} <img class="avatar" src="{{ Auth::User()->avatar }}">
+                        {{ Auth::User()->name }} <img class="avatar" src="{{ Auth::User()->avatar }}"> 
                     </ul>
 
                 </div>
             </div>
         </nav>
-        <link href="/css/progressbar.css" rel="stylesheet"/>
         <ul id="progressbar" style="text-align: center; margin-top: 2%">
             <li class="active" style="color: black; ">Selecciona</li>
             <li class="active" style="color: black; ">Marca</li>
-            <li class="active" style="color: black; ">Modelo</li>
+            <li style="color: black; ">Modelo</li>
             <li style="color: black; ">Estado</li>
         </ul>
 
@@ -63,7 +62,7 @@
                         margin-left: 2%;
                         margin-bottom: 2%;
                     }                    
-                }  
+                }
                 .avatar {
                     border-radius: 50%;
                     max-height: 50px;
@@ -71,19 +70,23 @@
                 }
             </style>
             <div class="CATEGORIAS1" style="margin-top: 2%">
-                @foreach($celular as $cel)
                 <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
-                    <a href="/Reciclar/P/{{ $cel->cod_produc }}">
-                    <img style="width: 100%; " src="../../{{ $cel->foto }}">
-                    <label style="font-size: 100%; margin-top: 8%; text-align: center; width: 100%">{{$cel->nombre}}</label>
-                    <label style="font-size: 80%; margin-top: 2%; text-align: center; width: 100%; color: green">S/. {{$cel->precio_ini}}</label>
+                    <a href="/Reciclar/iPad/P">
+                    <img style="width: 100%; " src="../../img/ipads/ipad.png">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">iPad</label>
                     </a>
                     </div>
                 </div>
-                @endforeach
-            </div>
-
+                
+                <div id="cel" style="display: inline-block; "> 
+                    <div style="margin-top: 0%">
+                    <a href="/Reciclar/Samsung_T/P">
+                    <img style="width: 100%; " src="../../img/tabletas/samsung.png">
+                    <label style="font-size: 20px; margin-top: 8%; text-align: center; width: 100%">Samsung</label>
+                    </a>
+                    </div>
+                </div>
         </div>
 
 
@@ -92,23 +95,24 @@
     </div>
 @endsection
     <!--   Core JS Files   -->
-    <script src="../../assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
 
-	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="../../assets/js/bootstrap-checkbox-radio.js"></script>
+    <!--  Checkbox, Radio & Switch Plugins -->
+    <script src="../assets/js/bootstrap-checkbox-radio.js"></script>
 
-	<!--  Charts Plugin -->
-	<script src="../../assets/js/chartist.min.js"></script>
+    <!--  Charts Plugin -->
+    <script src="../assets/js/chartist.min.js"></script>
 
     <!--  Notifications Plugin    -->
-    <script src="../../assets/js/bootstrap-notify.js"></script>
+    <script src="../assets/js/bootstrap-notify.js"></script>
 
     <!--  Google Maps Plugin    -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
     <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-	<script src="../../assets/js/paper-dashboard.js"></script>
+    <script src="../assets/js/paper-dashboard.js"></script>
 
-	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-	<script src="../../assets/js/demo.js"></script>
+    <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/demo.js"></script>
+

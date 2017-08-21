@@ -28,7 +28,7 @@
 						<nav>
 							<ul>
 								<li><a href="/Reciclar/Tec" class="icon fa-recycle"><span class="label">Reciclar</span></a></li>
-								<li><a href="/logout" class="icon fa-shopping-cart"><span class="label">Tienda</span></a></li>
+								<li><a href="/Reciclar/Tienda" class="icon fa-shopping-cart"><span class="label">Tienda</span></a></li>
 							</ul>
 						</nav>
 					</header>

@@ -20,9 +20,8 @@
                     <a class="navbar-brand" href="/Reciclar/Tec" style="color: white">¿Qué voy a reciclar?</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right" style="margin-top: 2%">
-
-                        Hola, {{ Auth::User()->name }}
+                    <ul class="nav navbar-nav navbar-right" style="margin-top: 1%">
+                        {{ Auth::User()->name }} <img class="avatar" src="{{ Auth::User()->avatar }}">
                     </ul>
 
                 </div>
@@ -65,7 +64,11 @@
                         margin-bottom: 2%;
                     }                    
                 }
-
+                .avatar {
+                    border-radius: 50%;
+                    max-height: 50px;
+                    max-width: 50px;
+                }
             </style>
             <div class="CATEGORIAS1" style="margin-top: 2%">
                 @foreach($celular as $cel)
