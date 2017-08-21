@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html">
+                    <a href="/Reciclar/SobreNosotros">
                         <i class="ti-map"></i>
                         <p>Sobre Nosotros</p>
                     </a>

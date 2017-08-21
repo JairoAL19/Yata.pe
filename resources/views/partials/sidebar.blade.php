@@ -80,7 +80,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="maps.html" id="aa">
+                    <a href="/Reciclar/SobreNosotros" id="aa">
                         <i class="ti-map"></i>
                         <p>Sobre Nosotros</p>
                     </a>

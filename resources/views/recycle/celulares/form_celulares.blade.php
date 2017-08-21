@@ -35,6 +35,13 @@
                     max-height: 50px;
                     max-width: 50px;
                 }
+                input[type=number]::-webkit-outer-spin-button,
+
+input[type=number]::-webkit-inner-spin-button {
+
+    -webkit-appearance: none;
+
+    margin: 0;
         </style>
         <link href="/css/progressbar.css" rel="stylesheet"/>
         <ul id="progressbar" style="text-align: center; margin-top: 2%">
@@ -116,7 +123,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label>Dirección de entrega</label>
+                                                <label>Dirección de recojo</label>
                                                 <input type="text" class="form-control border-input" required name="direc" placeholder="Ejemplo, Av. Las Artes 850" >
                                             </div>
                                         </div>
@@ -126,14 +133,14 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>N° Celular</label>
-                                                <input type="text" class="form-control border-input" required name="telf1" placeholder="Ejemplo, 943695348">
+                                                <input type="number" onKeyDown="if(this.value.length==9) return false;" class="form-control border-input" required name="telf1" placeholder="Ejemplo, 943695348">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">    
 
                                                 <label>Fecha de recojo</label>
-                                                <input type="text" id="datepicker" class="form-control border-input" required name="fecha_r" placeholder="Día/Mes/Año" readonly style="background: #fffcf5">
+                                                <input type="text" id="datepicker" class="form-control border-input" required name="fecha_r" placeholder="Día/Mes/Año" style="background: #fffcf5" autocomplete="off" onfocus="focusa()" onblur="blura()">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -260,7 +267,14 @@
 
 
           function activar(){
-               document.getElementById("datepicker").style.disabled = false;
+
+            document.getElementById("datepicker").style.disabled = false;
+          }
+          function focusa(){
+            document.getElementById("datepicker").disabled = true;
+          }
+          function blura(){
+            document.getElementById("datepicker").disabled = false;
           }
       </script>
 

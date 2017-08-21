@@ -18,7 +18,9 @@ class Tienda extends Controller
     {
         return view('tienda.home');
     }
-
+    public function aboutass(){
+        return view('recycle.aboutass');
+    }
     /**
      * Show the form for creating a new resource.
      *

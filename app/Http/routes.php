@@ -81,6 +81,10 @@ Route::group(['prefix' => 'Reciclar','middleware' => 'auth'], function() {
 	Route::get('/Tienda', ['uses' => 'Tienda@index', 'as' => '/Tienda']);
 	//EndTienda
 
+	//SobreNosotros
+	Route::get('/SobreNosotros', ['uses' => 'Tienda@aboutass', 'as' => '/SobreNosotros']);
+	//EndSobreNosotros
+
 	
 });
 

@@ -42,6 +42,13 @@
                         margin-left: 2%;
                         margin-bottom: 2%;
                     }
+                    #buttonreci{
+                        width: 25%; margin-left: 40%; margin-bottom: 2%;
+                    }#preci{
+                        font-size: 30px;
+                    }#imgreci{
+                        width: 70%; margin-left: 15%
+                    }
                 }
                 @media screen and (max-width: 1280px) {
                     #cel{
@@ -54,7 +61,17 @@
                         padding: 1%;      
                         margin-left: 2%;
                         margin-bottom: 2%;
-                    }                    
+                    }
+                    #buttonreci{
+                        width: 40%; margin-left: 30%; 
+                    }#preci{
+                        font-size: 100%;
+                    }#imgreci{
+                        width: 77%;
+                    }#divreci{
+                        margin-top: 10%;
+                        margin-bottom: 5%;
+                    }         
                 }
                 .avatar_top {
                     border-radius: 50%;
@@ -64,7 +81,8 @@
 
             </style>
             <div class="CATEGORIAS1" style="margin-top: 2%">
-                @foreach($data as $dato)
+                @if(count($data) != 0)
+                @foreach($data as $dato)                
                 <div id="cel" style="display: inline-block; "> 
                     <div style="margin-top: 0%">
                     <img style="width: 100%; " src="../../{{ $dato->foto }}">
@@ -126,10 +144,16 @@
                     </div>                    
                 </div>
                 @endforeach
+                @else
+                <div id="divreci">
+                    <img src="/img/aunno.png" id="imgreci">
+                </div>
+                    <a href="/Reciclar/Tec"><button class="btn btn-info active" id="buttonreci"><p id="preci"><b>Reciclar ahora</b></p></button></a>
+                @endif
             </div>
             </br>
-            <p style="margin-bottom: 15px; margin-left: 15px; text-align: justify;">
-                *Solo se puede cancelar una solicitud de reciclado mientras el courier no haya sido asignado (Estado: Pendiente). Una vez fue asignado si desea cancelar el recojo de su articulo tendrá que llamar al (01)222-2222, indicando el motivo.</br></br>
+            <p style="margin-bottom: 15px; margin-left: 15px; text-align: justify; font-size: 90%">
+                *Solo se puede cancelar una solicitud de reciclado mientras el courier no haya sido asignado (Estado: Pendiente). Una vez fue asignado si desea cancelar el recojo de su articulo tendrá que comunicarse por mensajería, indicando el motivo.</br></br>
                 *Solo se muestran las solicitudes con un rango máximo de 30 días desde su fecha de registro.</br></br>
                 *Si su pedido fue cancelado sin su concentimiento o autorización por favor comuniquesé con nosotros mediante el chat o el formulario de contacto.
             </p>
