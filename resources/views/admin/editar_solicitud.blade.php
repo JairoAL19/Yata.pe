@@ -41,7 +41,8 @@
                 <tr>
                     <td>N°</td>
                     <td>Activo</td>
-                    <td>Usuario</td>
+                    <td>Usuario</td>                    
+                    <td>Teléfono</td>
                     <td>Producto</td>
                     <td>Fecha de Recojo</td>
                     <td>Precio Final</td>
@@ -59,6 +60,7 @@
                         </select>
                     </td>                    
                     <td>{{$solicitudes->cod_user}}</td>
+                    <td>{{$solicitudes->telf1}}</td>
                     <td>{{$solicitudes->cod_produc}}</td>
                     <td>{{$solicitudes->fecha_r}}</td>
                     <td>{{$solicitudes->precio_fin}}</td>

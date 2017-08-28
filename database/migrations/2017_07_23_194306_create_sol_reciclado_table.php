@@ -15,6 +15,7 @@ class CreateSolRecicladoTable extends Migration
         Schema::create('sol_reciclado', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cod_user')->NotNull;
+            $table->string('telf1');
             $table->string('cod_produc');
             $table->date('fecha_r');
             $table->float('precio_fin')->NotNull;

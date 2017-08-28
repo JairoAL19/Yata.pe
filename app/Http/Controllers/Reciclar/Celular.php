@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Models\Solicitud_r;
 use App\Models\Courier;
+use Mail;
 class Celular extends Controller
 {
     /**
@@ -243,12 +244,26 @@ class Celular extends Controller
             $solici->metodo_p = $data->metodo_p;
             $solici->estado = $data->estado;
             $solici->courier = 'Pendiente';
+            $solici->telf1 = $data->telf1;
 
             $dia= substr($data->fecha_r, -10,2);
             $mes= substr($data->fecha_r, -6,1);
             $anio= substr($data->fecha_r, -4);
             $courier = Courier::where('dia', $dia.'/'.$mes.'/'.$anio)->where('hora', '00:00:00')->first();
+
+            $nombre = User::find($solici->cod_user);
+            $data->nombre = $nombre->name;
+            $array = [$nombre->email, $nombre->name, $data->cod_produc, $data->fecha_r, $data->precio_fin, $data->metodo_p, $data->estado];            
+            Mail::send('emails.solicitud_cliente',['array' => $array], function($msj) use ($array) {
+                $msj->from('ventas@yata.pe', 'Yata Perú');
+                $msj->to($array[0], $array[1])->subject('Felicidades! La solicitud de reciclado se envió con exito');
+            });
+            Mail::send('emails.solicitud',$request->all(), function($msj){
+                $msj->subject('Nueva Solicitud');
+                $msj->to('yataperu@gmail.com');
+            });
             $courier->delete();
+            
 
             $solici->save();
             return redirect()->route('/Aceptado', ['data' =>  $solici->id, 'marca' => $data->marca.'%Modelo'.$data->cod_produc,   ]);      

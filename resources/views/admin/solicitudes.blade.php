@@ -99,6 +99,7 @@
                     <td>N°</td>
                     <td>Activo</td>
                     <td>Usuario</td>
+                    <td>Teléfono</td>
                     <td>Producto</td>
                     <td>Fecha de Recojo</td>
                     <td>Precio Final</td>
@@ -127,6 +128,7 @@
                             <td style="text-align: center;"><img style="width: 32px;" src="../../img/rojo.png"></td>
                         @endif
                         <td>{{ $solici->cod_user}}</td>
+                        <td>{{$solici->telf1}}</td>
                         <td>{{ $solici->cod_produc}}</td>
                         <td>{{ $solici->fecha_r}}</td>
                         <td>{{ $solici->precio_fin}}</td>

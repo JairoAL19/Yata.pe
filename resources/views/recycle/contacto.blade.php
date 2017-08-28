@@ -25,12 +25,15 @@
             </div>
         </nav>
 			<div id="" >
-				<div id="formulario" class="container 75%" style="display: inline-block">
-
+				<div id="formulario" class="container 75%" style="display: inline-block">					
 					<header class="major last">
-						<h2>Formulario de contacto</h2>
+						<h2 style="margin-bottom: 3%">Formulario de contacto</h2>
 					</header>
-
+					@if(Session::has('flash_message'))
+						<div style="background: #3ED011; text-align: center; color: white; margin-bottom: 2%">
+						{{Session::get('flash_message')}}
+						</div>
+					@endif
 					<form method="post" action="Contacto_mensaje">
 						<div class="row">
 							<div class="6u 12u(mobilep)">

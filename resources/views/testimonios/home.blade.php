@@ -36,7 +36,7 @@
         </nav>
 
         <div class="content" id="bg" >
-            <section id="two" class="wrapper2">
+            <section id="two" class="wrapper2" style="margin-top: 1%; padding-top: 2%">
                 <div class="inner alt">
                     <section class="spotlight">
                         <div class="image"><img src="/images/pic01.jpg" alt="" /></div>

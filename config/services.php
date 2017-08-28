@@ -38,12 +38,12 @@ return [
      'facebook' => [
       'client_id' => '2351001985124122',
       'client_secret' => 'f64c4afa131812c5b9a3770a7ac032ea',
-      'redirect' => 'http://192.168.1.9/callback/facebook/',
+      'redirect' => 'http://yata.pe/callback/facebook/',
      ],
      'google' => [
       'client_id' => '221071130653-dp4nue5ckc4ig4qtvr7831kalbdfu08h.apps.googleusercontent.com',
       'client_secret' => 'VXJWRY82jHb-RLiXkFm0JeLS',
-      'redirect' => 'http://localhost/callback/google/',
+      'redirect' => 'http://yata.pe/callback/google/',
      ],
      
 ];

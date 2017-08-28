@@ -121,12 +121,23 @@
                     max-height: 50px;
                     max-width: 50px;
                 }
+                #img_c:hover{
+                    z-index: 2;
+                    -webkit-transition: all 200ms ease-in;
+                    -webkit-transform: scale(1.5);
+                    -ms-transition: all 200ms ease-in;
+                    -ms-transform: scale(1.5);   
+                    -moz-transition: all 200ms ease-in;
+                    -moz-transform: scale(1.5);
+                    transition: all 200ms ease-in;
+                    transform: scale(1.01);
+                }
             </style>
             <div class="CATEGORIAS" style="margin-top: 2%">
                 <div id="celular" class="boton" style="display: inline-block">                
                     <div id="celub2" style="">   
                     <a href="Celulares">             
-                    <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/celulares.png">
+                    <img id="img_c" style="width: 40%; height: 85%;margin-left: 5%" src="../../img/celulares.png">
                     <label style="font-size: 120%">CELULARES</label>
                     </a>
                     </div>
@@ -134,7 +145,7 @@
                 <div id="celular" class="boton" style="display: inline-block">                
                     <div id="celub2" style="">   
                     <a href="iPads&Tablets">             
-                    <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/tablet.jpg">
+                    <img id="img_c" style="width: 40%; height: 85%;margin-left: 5%" src="../../img/tablet.jpg">
                     <label style="font-size: 120%">IPAD Y TABLET</label>
                     </a>
                     </div>
@@ -142,7 +153,7 @@
                 <div id="celular" class="boton" style="display: inline-block">                
                     <div id="celub2" style="">   
                     <a href="Reproductores">             
-                    <img style="width: 40%; height: 85%;margin-left: 5%" src="../../img/ipod.jpg">
+                    <img id="img_c" style="width: 40%; height: 85%;margin-left: 5%" src="../../img/ipod.jpg">
                     <label style="font-size: 120%">REPRODUCTORES</label>
                     </a>
                     </div>

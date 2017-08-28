@@ -10,7 +10,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use Auth;
-
+use Session;
+use redirect;
+use Mail;
 class Contacto extends Controller
 {
     /**
@@ -29,7 +31,13 @@ class Contacto extends Controller
         $contac->mensaje = $data->mensaje;
         $contac->estado = 'P';
         $contac->save();
-        return redirect('/Reciclar/Contacto/MensajeEnviado');
+
+        Mail::send('emails.contact',$request->all(), function($msj){
+            $msj->subject('Correo de contacto');
+            $msj->to('yataperu@gmail.com');
+        });
+        Session::flash('flash_message', 'Mensaje enviado correctamente, te responderemos a la brevedad');
+        return redirect('/Reciclar/Contacto');
     }
     public function contacto_enviado(){
         return view('recycle/contacto_send');

@@ -139,10 +139,10 @@
                     max-width: 50px;
                 }
             </style>
-            <div style="margin-top: 2%; display: inline-block; float: left;">
-                <img class="constr" src="/img/construccion.jpg">
+            <div style="margin-top: 2%; display: inline-block; float: left; width: 100%; text-align: center">
+                <img class="constr" src="/img/proximamente.png" style="width: 70%">
             </div>
-            <div id="fbpage" style="display: inline-block; margin-top: 2%">
+            <div id="fbpage" style="display: inline-block; margin-top: 3%; width: 100%; text-align: center;">
                 <div id="fb-root"></div>
                 <script>(function(d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0];
