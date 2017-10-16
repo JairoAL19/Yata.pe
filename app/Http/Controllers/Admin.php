@@ -85,7 +85,12 @@ class Admin extends Controller
         $solici = Solicitud_r::find($id);
         $cont = 1;
         $dia= substr($solici->fecha_r, -10,2);
-        $mes= substr($solici->fecha_r, -6,1);
+        if (substr($solici->fecha_r, -7,1) == '0') {
+            $mes= substr($solici->fecha_r, -6,1);
+        }
+        if (substr($solici->fecha_r, -7,1) != '0') {
+            $mes= substr($solici->fecha_r, -7,2);
+        }
         $anio= substr($solici->fecha_r, -4);
         $couriers = Courier::where('dia', $dia.'/'.$mes.'/'.$anio)->where('hora', '!=','00:00:00')->where('dispo', 'd')->get();
         $cont = count($couriers);
@@ -166,7 +171,12 @@ class Admin extends Controller
     public function agregar_turno_post(Request $request){
         $data = $request;
         $dia= substr($data->fecha, -10,2);
-        $mes= substr($data->fecha, -6,1);
+        if (substr($data->fecha, -7,1) == '0') {
+            $mes= substr($data->fecha, -6,1);
+        }
+        if (substr($data->fecha, -7,1) != '0') {
+            $mes= substr($data->fecha, -7,2);
+        }
         $anio= substr($data->fecha, -4);
         $d = $dia."/".$mes."/".$anio;
         $courier_turno = new Courier();

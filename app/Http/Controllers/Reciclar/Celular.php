@@ -247,10 +247,14 @@ class Celular extends Controller
             $solici->telf1 = $data->telf1;
 
             $dia= substr($data->fecha_r, -10,2);
-            $mes= substr($data->fecha_r, -6,1);
+            if (substr($data->fecha_r, -7,1) == '0') {
+                $mes= substr($data->fecha_r, -6,1);
+            }
+            if (substr($data->fecha_r, -7,1) != '0') {
+                $mes= substr($data->fecha_r, -7,2);
+            }
             $anio= substr($data->fecha_r, -4);
             $courier = Courier::where('dia', $dia.'/'.$mes.'/'.$anio)->where('hora', '00:00:00')->first();
-
             $nombre = User::find($solici->cod_user);
             $data->nombre = $nombre->name;
             $array = [$nombre->email, $nombre->name, $data->cod_produc, $data->fecha_r, $data->precio_fin, $data->metodo_p, $data->estado];            
